@@ -1094,9 +1094,9 @@ function adaptWrc(rallies) {
   }));
 }
 
-async function loadData() {
+async function loadData(bust = false) {
   try {
-    const r = await fetch('data.json?v=' + Date.now());
+    const r = await fetch('data.json', { cache: bust ? 'no-cache' : 'default' });
     if (!r.ok) throw new Error('HTTP ' + r.status);
     const data = await r.json();
     RACES       = adaptF1(data.f1  || []);
@@ -1383,7 +1383,8 @@ async function appInit() {
   if (nf1) { openRounds.add(String(nf1.round)+'|||'+nf1.name); renderRaces(); }
   const nwrc = findNextWrcRally(Date.now());
   if (nwrc) { wrcOpenRallies.add('wrc-'+nwrc.round); renderWrcRallies(); }
-  setInterval(() => { updateHero(); renderRaces(); updateWrcHero(); renderWrcRallies(); }, 1000);
+  setInterval(() => { updateHero(); updateWrcHero(); }, 1000);
+  setInterval(() => { renderRaces(); renderWrcRallies(); }, 30000);
 }
 appInit();
 
@@ -1477,7 +1478,7 @@ async function triggerWorkflow(owner, repo, token) {
       // After ~30s reload data.json (workflow takes ~20-30s)
       setTimeout(async () => {
         btn.textContent = '⟳ Chargement...';
-        await loadData();
+        await loadData(true);
         renderRaces(); renderWrcRallies();
         btn.disabled = false;
         btn.className = '';
