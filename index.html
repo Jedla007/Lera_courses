@@ -965,7 +965,7 @@
   <button class="tab" onclick="filterRaces('past',this)">Terminés</button>
 </div>
 
-<div class="races-section" id="races-container"></div>
+<div class="races-section" id="races-container"><div style="padding:40px;text-align:center;color:var(--text-dim);font-family:'Barlow Condensed',sans-serif;letter-spacing:2px;font-size:13px;">Chargement...</div></div>
 
 </div><!-- /panel-f1 -->
 
@@ -1032,7 +1032,7 @@
     <button class="tab" onclick="wrcFilter('past',this)">Terminés</button>
   </div>
 
-  <div class="wrc-races-section" id="wrc-races-container"></div>
+  <div class="wrc-races-section" id="wrc-races-container"><div style="padding:40px;text-align:center;color:var(--text-dim);font-family:'Barlow Condensed',sans-serif;letter-spacing:2px;font-size:13px;">Chargement...</div></div>
 </div><!-- /panel-wrc -->
 
 
@@ -1096,7 +1096,13 @@ function adaptWrc(rallies) {
 
 async function loadData(bust = false) {
   try {
-    const r = await fetch('data.json', { cache: bust ? 'no-cache' : 'default' });
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
+    const r = await fetch('data.json', { 
+      cache: bust ? 'no-cache' : 'default',
+      signal: controller.signal
+    });
+    clearTimeout(timeout);
     if (!r.ok) throw new Error('HTTP ' + r.status);
     const data = await r.json();
     RACES       = adaptF1(data.f1  || []);
@@ -1106,6 +1112,8 @@ async function loadData(bust = false) {
   } catch(e) {
     console.warn('data.json fetch failed, using fallback:', e.message);
     document.getElementById('data-version').textContent = 'Données hors ligne';
+    document.getElementById('races-container').innerHTML = '<div style="padding:30px 20px;text-align:center;color:var(--text-dim);font-size:13px;">⚠ Impossible de charger les données.<br>Vérifiez votre connexion.</div>';
+    document.getElementById('wrc-races-container').innerHTML = '';
   }
 }
 

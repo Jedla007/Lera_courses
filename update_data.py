@@ -25,7 +25,7 @@ def load_data():
 def save_data(data):
     data["version"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     with open(DATA_FILE, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+        json.dump(data, f, ensure_ascii=False, separators=(',', ':'))
     print(f"✓ data.json sauvegardé — {data['version']}")
 
 def update_f1(data):
