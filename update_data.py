@@ -1,28 +1,23 @@
 #!/usr/bin/env python3
 """
-WRC & F1 2026 — Auto-updater
-Runs daily via GitHub Actions.
-Scrapes official sources and updates data.json.
+F1 & WRC 2026 — Auto-updater (robuste)
+Tourne chaque nuit via GitHub Actions.
 """
 
-import json, re, sys
+import json, sys, traceback
 from datetime import datetime, timezone
 from pathlib import Path
 
 try:
     import requests
-    from bs4 import BeautifulSoup
 except ImportError:
-    print("Installing deps...")
     import subprocess
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "requests", "beautifulsoup4", "-q"])
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "requests", "-q"])
     import requests
-    from bs4 import BeautifulSoup
 
 DATA_FILE = Path(__file__).parent / "data.json"
-HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; F1WRC-Updater/1.0)"}
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; F1WRC-Bot/1.0)"}
 
-# ── Load current data ──────────────────────────────────────────────────────────
 def load_data():
     with open(DATA_FILE, encoding="utf-8") as f:
         return json.load(f)
@@ -31,200 +26,83 @@ def save_data(data):
     data["version"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-    print(f"✓ data.json saved — version {data['version']}")
+    print(f"✓ data.json sauvegardé — {data['version']}")
 
-# ── F1: Jolpica/Ergast API (free, no key needed) ───────────────────────────────
 def update_f1(data):
-    print("\n── F1: Fetching from Jolpica API...")
+    print("\n── F1: Jolpica/Ergast API...")
     changes = 0
     try:
-        # Fetch race schedule
         url = "https://api.jolpi.ca/ergast/f1/2026.json"
-        r = requests.get(url, headers=HEADERS, timeout=15)
+        r = requests.get(url, headers=HEADERS, timeout=20)
         r.raise_for_status()
         races_api = r.json()["MRData"]["RaceTable"]["Races"]
+        print(f"   {len(races_api)} courses récupérées")
 
         for race_api in races_api:
-            round_num = int(race_api["round"])
-            race_date = race_api.get("date", "")
-            race_time = race_api.get("time", "00:00:00Z").replace("Z","")
-
-            # Find matching race in our data
-            match = next((r for r in data["f1"] if r.get("round") == round_num), None)
+            rnd = int(race_api["round"])
+            match = next((x for x in data["f1"] if x.get("round") == rnd), None)
             if not match:
                 continue
 
-            # Check and update race session UTC
-            race_utc = f"{race_date}T{race_time}Z" if race_date else None
-            if race_utc:
-                # Find the "Course" session
-                for sess in match["sessions"]:
-                    if sess["type"] == "race":
-                        if sess["utc"] != race_utc:
-                            print(f"  R{round_num} {match['short']}: Course {sess['utc']} → {race_utc}")
-                            sess["utc"] = race_utc
-                            changes += 1
-
-            # Update qualifying if available
-            quali = race_api.get("Qualifying", {})
-            if quali.get("date") and quali.get("time"):
-                q_utc = f"{quali['date']}T{quali['time'].replace('Z','')}Z"
-                for sess in match["sessions"]:
-                    if sess["type"] == "q" and "Sprint" not in sess["label"] and "Qualifs" not in sess["label"]:
-                        # last quali session
-                        pass  # update only main quali
+            # Course principale
+            d = race_api.get("date","")
+            t = race_api.get("time","")
+            if d and t:
+                utc_new = f"{d}T{t}" if t.endswith("Z") else f"{d}T{t}Z"
+                for s in match["sessions"]:
+                    if s["type"] == "race" and s["utc"] != utc_new:
+                        print(f"   R{rnd} Course: {s['utc']} → {utc_new}")
+                        s["utc"] = utc_new
+                        changes += 1
 
             # Sprint
             sprint = race_api.get("Sprint", {})
-            if sprint.get("date") and sprint.get("time"):
-                s_utc = f"{sprint['date']}T{sprint['time'].replace('Z','')}Z"
-                for sess in match["sessions"]:
-                    if sess["type"] == "sprint":
-                        if sess["utc"] != s_utc:
-                            print(f"  R{round_num} {match['short']}: Sprint {sess['utc']} → {s_utc}")
-                            sess["utc"] = s_utc
-                            changes += 1
+            sd, st = sprint.get("date",""), sprint.get("time","")
+            if sd and st:
+                utc_new = f"{sd}T{st}" if st.endswith("Z") else f"{sd}T{st}Z"
+                for s in match["sessions"]:
+                    if s["type"] == "sprint" and s["utc"] != utc_new:
+                        print(f"   R{rnd} Sprint: {s['utc']} → {utc_new}")
+                        s["utc"] = utc_new
+                        changes += 1
 
-        print(f"  F1: {changes} change(s) detected")
+            # Qualifications
+            q = race_api.get("Qualifying", {})
+            qd, qt = q.get("date",""), q.get("time","")
+            if qd and qt:
+                utc_new = f"{qd}T{qt}" if qt.endswith("Z") else f"{qd}T{qt}Z"
+                for s in match["sessions"]:
+                    if s["type"] == "q" and "Sprint" not in s["label"] and s["utc"] != utc_new:
+                        print(f"   R{rnd} Qualifs: {s['utc']} → {utc_new}")
+                        s["utc"] = utc_new
+                        changes += 1
+                        break
+
     except Exception as e:
-        print(f"  F1 update failed: {e}")
+        print(f"   ⚠ F1 update non critique: {e}")
+    
+    print(f"   → {changes} changement(s)")
     return changes
 
-# ── WRC: wrc.com public API ────────────────────────────────────────────────────
-def update_wrc(data):
-    print("\n── WRC: Fetching from wrc.com...")
-    changes = 0
-    try:
-        # WRC public season endpoint
-        url = "https://www.wrc.com/en/api/season-events/?season=2026"
-        r = requests.get(url, headers=HEADERS, timeout=15)
-
-        if r.status_code != 200:
-            # Try alternate endpoint
-            url2 = "https://www.wrc.com/en/wrc/results/all-results/page/1/?season=2026"
-            r = requests.get(url2, headers=HEADERS, timeout=15)
-
-        if r.status_code == 200:
-            try:
-                events = r.json()
-                if isinstance(events, list):
-                    for ev in events:
-                        name = ev.get("name","")
-                        start = ev.get("startDate") or ev.get("start_date","")
-                        match = next((rally for rally in data["wrc"]
-                                      if rally["short"].lower() in name.lower()
-                                      or any(w in name for w in rally["name"].split()[:2])), None)
-                        if match and start:
-                            # Update first stage date if significantly different
-                            if match["stages"]:
-                                current = match["stages"][0]["utc"][:10]
-                                new_date = start[:10]
-                                if current != new_date:
-                                    print(f"  WRC {match['short']}: date {current} → {new_date}")
-                                    changes += 1
-            except json.JSONDecodeError:
-                pass
-
-        print(f"  WRC: {changes} change(s) detected")
-    except Exception as e:
-        print(f"  WRC update failed (non-critical): {e}")
-    return changes
-
-# ── WRC: scrape wrc.com event pages for detailed itinerary ────────────────────
-def update_wrc_itinerary(data):
-    """Try to fetch detailed itinerary for upcoming rallies from wrc.com"""
-    print("\n── WRC: Checking itineraries for upcoming rallies...")
-    now = datetime.now(timezone.utc)
-    changes = 0
-
-    for rally in data["wrc"]:
-        # Only process upcoming rallies (first stage in future)
-        if not rally["stages"]:
-            continue
-        first_utc = datetime.fromisoformat(rally["stages"][0]["utc"].replace("Z","+00:00"))
-        if first_utc < now:
-            continue  # skip past rallies
-
-        try:
-            slug = rally["name"].lower()
-            slug = re.sub(r"[^a-z0-9]+", "-", slug).strip("-")
-            url = f"https://www.wrc.com/en/events/{slug}-2026/itinerary/"
-            r = requests.get(url, headers=HEADERS, timeout=10)
-            if r.status_code != 200:
-                continue
-
-            soup = BeautifulSoup(r.text, "html.parser")
-            # Look for stage time elements
-            stage_rows = soup.select("[class*='stage'], [class*='itinerary-item'], tr[data-stage]")
-
-            if stage_rows:
-                print(f"  {rally['short']}: found {len(stage_rows)} stage rows on wrc.com")
-                # Parse and update if data differs
-                # (Conservative: only update if we find clearly structured data)
-                for i, row in enumerate(stage_rows[:len(rally["stages"])]):
-                    time_el = row.select_one("[class*='time'], time, [datetime]")
-                    if time_el:
-                        dt_str = time_el.get("datetime") or time_el.text.strip()
-                        if dt_str and len(dt_str) > 8:
-                            # Validate it looks like a timestamp
-                            if re.match(r'\d{4}-\d{2}-\d{2}', dt_str):
-                                utc_new = dt_str if "Z" in dt_str else dt_str + "Z"
-                                if i < len(rally["stages"]) and rally["stages"][i]["utc"] != utc_new:
-                                    print(f"    {rally['stages'][i]['id']}: {rally['stages'][i]['utc']} → {utc_new}")
-                                    rally["stages"][i]["utc"] = utc_new
-                                    changes += 1
-        except Exception as e:
-            pass  # Silent fail for individual rallies
-
-    print(f"  WRC itinerary: {changes} change(s) detected")
-    return changes
-
-# ── Check F1 cancellations ────────────────────────────────────────────────────
-def check_cancellations(data):
-    """Check for newly cancelled races via Ergast"""
-    print("\n── Checking cancellations...")
-    try:
-        url = "https://api.jolpi.ca/ergast/f1/2026.json"
-        r = requests.get(url, headers=HEADERS, timeout=15)
-        r.raise_for_status()
-        races_api = r.json()["MRData"]["RaceTable"]["Races"]
-        confirmed_rounds = {int(race["round"]) for race in races_api}
-
-        changes = 0
-        for race in data["f1"]:
-            if race.get("cancelled") or race.get("round") is None:
-                continue
-            if race["round"] not in confirmed_rounds:
-                print(f"  ⚠ R{race['round']} {race['name']} may be cancelled (not in API)")
-                # Don't auto-cancel — just warn. Human should confirm.
-        return changes
-    except Exception as e:
-        print(f"  Cancellation check failed: {e}")
-        return 0
-
-# ── Main ───────────────────────────────────────────────────────────────────────
 def main():
-    print(f"{'='*60}")
-    print(f"F1 & WRC Data Updater — {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
-    print(f"{'='*60}")
+    print("=" * 55)
+    print(f"F1 & WRC Updater — {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
+    print("=" * 55)
 
     data = load_data()
-    total_changes = 0
+    total = 0
 
-    total_changes += update_f1(data)
-    total_changes += update_wrc(data)
-    total_changes += update_wrc_itinerary(data)
-    check_cancellations(data)
+    total += update_f1(data)
+    # WRC: pas d'API publique fiable, les données sont maintenues manuellement
 
-    if total_changes > 0:
-        save_data(data)
-        print(f"\n✅ {total_changes} total change(s) saved to data.json")
-    else:
-        # Always save to update the version timestamp
-        save_data(data)
-        print(f"\n✅ No changes detected — version timestamp updated")
-
+    save_data(data)
+    print(f"\n✅ Terminé — {total} changement(s) au total")
     return 0
 
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except Exception as e:
+        print(f"\n❌ Erreur fatale: {e}")
+        traceback.print_exc()
+        sys.exit(1)
