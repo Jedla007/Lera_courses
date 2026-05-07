@@ -1,0 +1,1846 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>F1 2026 — Calendrier des Grands Prix</title>
+
+<!-- PWA Meta -->
+<meta name="application-name" content="F1 2026">
+<meta name="description" content="Calendrier F1 2026 avec compte à rebours en temps réel. Prochain GP, prochaine session, horaires locaux.">
+<meta name="theme-color" content="#E8002D">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="F1 2026">
+<meta name="msapplication-TileColor" content="#E8002D">
+<meta name="msapplication-tap-highlight" content="no">
+
+<!-- Inline SVG icon as data URI -->
+<link rel="icon" type="image/svg+xml" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+
+<!-- Manifest injected inline via JS (no external file needed) -->
+<script>
+(function(){
+  const icon = "data:image/png;base64,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";
+  const manifest = {
+    name: "F1 2026 — Calendrier des Grands Prix",
+    short_name: "F1 2026",
+    description: "Calendrier F1 2026 avec compte à rebours en temps réel.",
+    start_url: "./",
+    display: "standalone",
+    background_color: "#0a0a0c",
+    theme_color: "#E8002D",
+    orientation: "portrait-primary",
+    lang: "fr",
+    icons: [
+      { src: icon, sizes: "192x192", type: "image/svg+xml", purpose: "any maskable" },
+      { src: icon, sizes: "512x512", type: "image/svg+xml", purpose: "any maskable" }
+    ]
+  };
+  const blob = new Blob([JSON.stringify(manifest)], {type:'application/manifest+json'});
+  const link = document.createElement('link');
+  link.rel = 'manifest';
+  link.href = URL.createObjectURL(blob);
+  document.currentScript.parentNode.appendChild(link);
+})();
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E8002D;
+    --red-dark: #a5001e;
+    --red-glow: rgba(232,0,45,0.18);
+    --gold: #FFD700;
+    --gold-dim: #b89c00;
+    --bg: #0a0a0c;
+    --bg2: #111116;
+    --bg3: #18181f;
+    --bg4: #1f1f28;
+    --border: rgba(255,255,255,0.07);
+    --border-bright: rgba(255,255,255,0.15);
+    --text: #f0f0f0;
+    --text-muted: #888;
+    --text-dim: #555;
+    --sprint: #1a9e75;
+    --sprint-bg: rgba(26,158,117,0.12);
+    --fp: #5a8fc9;
+    --fp-bg: rgba(90,143,201,0.12);
+    --quali: #c9885a;
+    --quali-bg: rgba(201,136,90,0.12);
+    --race: #E8002D;
+    --race-bg: rgba(232,0,45,0.10);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    /* Safe area for iPhone notch & home indicator */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Background grid */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .everything { position: relative; z-index: 1; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 32px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(10,10,12,0.9);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .f1-badge {
+    background: var(--red);
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    padding: 4px 10px;
+    clip-path: polygon(0 0, 100% 0, 92% 100%, 0% 100%);
+  }
+
+  .logo-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .clock-utc {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+  }
+
+  #live-clock {
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* HERO COUNTDOWN */
+  .hero {
+    padding: 48px 32px 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .hero-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+
+  .hero-race-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 4px;
+  }
+
+  .hero-race-sub {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-race-sub .flag { font-size: 20px; }
+
+  .countdown-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 600px) {
+    /* Layout */
+    .countdown-grid { grid-template-columns: 1fr; gap: 10px; }
+    header { padding: 10px 16px; }
+    .hero { padding: 16px 14px 12px; }
+    .races-section { padding: 0 10px 80px; }
+    .filter-bar { padding: 0 10px; gap: 6px; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .filter-bar::-webkit-scrollbar { display: none; }
+
+    /* Header */
+    .logo-text { font-size: 16px; letter-spacing: 2px; }
+    .f1-badge { font-size: 15px; padding: 3px 8px; }
+    .clock-utc { font-size: 12px; }
+
+    /* Hero */
+    .hero-race-name { font-size: 28px; letter-spacing: -0.5px; }
+    .hero-race-sub { font-size: 13px; margin-bottom: 16px; flex-wrap: wrap; gap: 6px; }
+    .hero-label { font-size: 10px; letter-spacing: 3px; }
+
+    /* Countdown cards */
+    .countdown-card { padding: 16px 18px; border-radius: 10px; }
+    .countdown-card-title { font-size: 15px; margin-bottom: 12px; }
+    .timer-row { gap: 8px; }
+    .timer-num { font-size: 38px; }
+    .timer-sep { font-size: 28px; }
+    .timer-label { font-size: 9px; letter-spacing: 1px; }
+    .session-date-line { font-size: 11px; margin-top: 10px; padding-top: 8px; }
+
+    /* Filter tabs */
+    .tab { font-size: 11px; padding: 6px 12px; white-space: nowrap; border-radius: 20px; }
+
+    /* Race cards */
+    .race-card { border-radius: 8px; margin-bottom: 6px; }
+    .race-header { grid-template-columns: 42px 1fr auto; gap: 10px; padding: 11px 12px; }
+    .round-num { font-size: 10px; }
+    .round-num span { font-size: 18px; }
+    .race-name { font-size: 14px; }
+    .race-circuit { font-size: 11px; }
+    .race-dates-main { font-size: 13px; }
+    .race-dates-year { font-size: 10px; }
+    .toggle-hint { font-size: 10px; }
+    .badge { font-size: 9px; padding: 2px 5px; }
+
+    /* Sessions panel */
+    .session-item { grid-template-columns: 18px 1fr auto; gap: 8px; padding: 9px 12px; font-size: 11px; }
+    .session-type { font-size: 12px; }
+    .session-datetime { font-size: 11px; }
+    .session-dur { display: none; }
+    .session-status { font-size: 10px; }
+    .section-sep { font-size: 9px; padding: 14px 0 8px; }
+  }
+
+  .countdown-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .countdown-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+
+  .countdown-card.main::before { background: var(--red); }
+  .countdown-card.session::before { background: var(--gold); }
+
+  .countdown-card-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+
+  .countdown-card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  .countdown-card.main .countdown-card-title { color: var(--red); }
+  .countdown-card.session .countdown-card-title { color: var(--gold); }
+
+  .timer-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-end;
+  }
+
+  .timer-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .timer-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 800;
+    line-height: 1;
+    min-width: 2ch;
+    text-align: center;
+  }
+
+  .countdown-card.main .timer-num { color: #fff; }
+  .countdown-card.session .timer-num { color: var(--gold); }
+
+  .timer-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .timer-sep {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: var(--text-dim);
+    padding-bottom: 6px;
+    line-height: 1;
+  }
+
+  .session-date-line {
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+  }
+
+  /* FILTER TABS */
+  .filter-bar {
+    max-width: 1100px;
+    margin: 0 auto 24px;
+    padding: 0 32px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 600px) { .filter-bar { padding: 0 16px; } }
+
+  .tab {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .tab:hover { border-color: var(--border-bright); color: var(--text); }
+  .tab.active { background: var(--red); border-color: var(--red); color: #fff; }
+
+  /* RACES LIST */
+  .races-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px 64px;
+  }
+
+  .section-sep {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    padding: 20px 0 10px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 12px;
+  }
+
+  .race-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+    cursor: pointer;
+  }
+
+  .race-card:hover { border-color: var(--border-bright); }
+  .race-card.is-next { border-color: var(--red); box-shadow: 0 0 0 1px var(--red), 0 4px 24px var(--red-glow); }
+  .race-card.cancelled { opacity: 0.35; cursor: default; }
+  .race-card.past { opacity: 0.6; }
+
+  .race-header {
+    display: grid;
+    grid-template-columns: 56px 1fr auto;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 18px;
+  }
+
+  .round-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: var(--text-dim);
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .round-num span {
+    display: block;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text-muted);
+    line-height: 1;
+  }
+
+  .race-card.is-next .round-num span { color: var(--red); }
+
+  .race-main { flex: 1; }
+
+  .race-name-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 3px;
+  }
+
+  .race-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text);
+  }
+
+  .badge {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+
+  .badge-sprint { background: var(--sprint-bg); color: var(--sprint); }
+  .badge-next { background: var(--red); color: #fff; }
+  .badge-done { background: rgba(255,255,255,0.05); color: var(--text-dim); }
+  .badge-cancel { background: rgba(232,0,45,0.1); color: #e86070; }
+  .badge-new { background: rgba(255,215,0,0.12); color: var(--gold); }
+
+  .race-circuit {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .race-dates-col {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .race-dates-main {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .race-dates-year {
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+
+  .toggle-hint {
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+
+  /* SESSIONS PANEL */
+  .sessions-panel {
+    display: none;
+    border-top: 1px solid var(--border);
+    padding: 0;
+  }
+
+  .sessions-panel.open { display: block; }
+
+  .session-item {
+    display: grid;
+    grid-template-columns: 24px 180px 1fr auto;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 18px 11px 18px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+
+  .session-item:last-child { border-bottom: none; }
+
+  .session-item.is-next-session {
+    background: rgba(255,215,0,0.04);
+  }
+
+  .session-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin: auto;
+  }
+
+  .dot-fp { background: var(--fp); }
+  .dot-q { background: var(--quali); }
+  .dot-sprint { background: var(--sprint); }
+  .dot-race { background: var(--red); }
+
+  .session-type {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .session-item.past-session .session-type { color: var(--text-dim); }
+
+  .session-datetime {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .session-item.past-session .session-datetime { color: var(--text-dim); }
+
+  .session-status {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  .status-done { color: var(--text-dim); }
+  .status-next { color: var(--gold); font-weight: 700; }
+  .status-live { color: #ff4444; font-weight: 700; letter-spacing: 0.5px; animation: pulse 1.2s ease-in-out infinite; }
+  .status-upcoming { color: var(--text-dim); }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .live-session {
+    background: rgba(255, 40, 40, 0.06);
+    border-left: 2px solid #ff4444;
+  }
+
+  .session-dur {
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-left: 6px;
+    font-style: italic;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 3px; }
+
+  /* PWA Install Banner */
+  #install-banner {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: var(--red);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 200;
+  }
+  #install-banner.show { display: flex; }
+  #install-banner button {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  #install-banner .dismiss {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    padding: 2px 6px;
+    opacity: 0.7;
+    letter-spacing: 0;
+  }
+
+  /* Offline indicator */
+  #offline-bar {
+    display: none;
+    background: #333;
+    color: var(--text-muted);
+    font-size: 12px;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 6px;
+  }
+  #offline-bar.show { display: block; }
+
+  /* iOS install hint */
+  #ios-banner {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: #1a1a22;
+    border-bottom: 1px solid var(--border-bright);
+    color: var(--text-muted);
+    padding: 10px 20px;
+    font-size: 13px;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 200;
+  }
+  #ios-banner.show { display: flex; }
+  #ios-banner strong { color: var(--text); }
+  #ios-banner .dismiss {
+    background: transparent;
+    border: none;
+    color: var(--text-dim);
+    font-size: 18px;
+    padding: 2px 6px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  /* ── TAB NAVIGATION ───────────────────────────────────────────────── */
+  .tab-nav {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    background: rgba(10,10,12,0.9);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 57px;
+    z-index: 99;
+    padding: 0 32px;
+  }
+  @media(max-width:600px){ .tab-nav { top: 48px; padding: 0 14px; } }
+  .tab-nav-btn {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .tab-nav-btn:hover { color: var(--text); }
+  .tab-nav-btn.active { color: var(--text); border-bottom-color: var(--red); }
+  .tab-nav-btn.wrc-active { border-bottom-color: #1a9e75; color: var(--text); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* ── WRC STYLES ───────────────────────────────────────────────────── */
+  .wrc-hero { padding: 48px 32px 32px; max-width: 1100px; margin: 0 auto; }
+  @media(max-width:600px){ .wrc-hero { padding: 16px 14px 12px; } }
+  .wrc-label { font-family:'Barlow Condensed',sans-serif; font-size:11px; letter-spacing:4px; text-transform:uppercase; color:#1a9e75; margin-bottom:8px; }
+  .wrc-name { font-family:'Barlow Condensed',sans-serif; font-size:clamp(28px,5vw,56px); font-weight:800; line-height:1; text-transform:uppercase; letter-spacing:-1px; margin-bottom:4px; }
+  .wrc-sub { font-size:14px; color:var(--text-muted); margin-bottom:28px; display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+  .countdown-card.wrc-main::before { background: #1a9e75; }
+  .countdown-card.wrc-session::before { background: #c9885a; }
+  .countdown-card.wrc-main .countdown-card-title { color: #1a9e75; }
+  .countdown-card.wrc-session .countdown-card-title { color: #c9885a; }
+  .countdown-card.wrc-session .timer-num { color: #c9885a; }
+  .countdown-card.wrc-live::before { background: #ff4444; }
+  .countdown-card.wrc-live .countdown-card-title { color: #ff4444; }
+  .countdown-card.wrc-live .timer-num { color: #ff4444; }
+
+  /* WRC race cards */
+  .wrc-card { background:var(--bg2); border:1px solid var(--border); border-radius:10px; margin-bottom:8px; overflow:hidden; transition:border-color 0.15s; cursor:pointer; }
+  .wrc-card:hover { border-color:var(--border-bright); }
+  .wrc-card.is-next { border-color:#1a9e75; box-shadow:0 0 0 1px #1a9e75, 0 4px 24px rgba(26,158,117,0.18); }
+  .wrc-card.past { opacity:0.6; }
+  .wrc-card.live-rally { border-color:#ff4444; box-shadow:0 0 0 1px #ff4444, 0 4px 24px rgba(255,68,68,0.15); }
+  .wrc-header { display:grid; grid-template-columns:56px 1fr auto; align-items:center; gap:16px; padding:14px 18px; }
+  @media(max-width:600px){ .wrc-header { grid-template-columns:42px 1fr auto; gap:10px; padding:11px 12px; } }
+  .surface-badge { font-family:'Barlow Condensed',sans-serif; font-size:10px; letter-spacing:1.5px; font-weight:700; text-transform:uppercase; padding:2px 7px; border-radius:4px; }
+  .surface-tarmac  { background:rgba(90,143,201,0.15); color:#5a8fc9; }
+  .surface-gravel  { background:rgba(180,130,60,0.15); color:#b47c3c; }
+  .surface-snow    { background:rgba(180,210,240,0.12); color:#9ab8d4; }
+  .surface-mixed   { background:rgba(150,100,180,0.15); color:#a07ac8; }
+
+  .ss-item { display:grid; grid-template-columns:52px 1fr auto auto; align-items:center; gap:12px; padding:9px 18px; border-bottom:1px solid var(--border); font-size:13px; }
+  .ss-item:last-child { border-bottom:none; }
+  .ss-item.past-ss { opacity:0.45; }
+  .ss-item.live-ss { background:rgba(255,40,40,0.06); border-left:2px solid #ff4444; }
+  .ss-item.next-ss { background:rgba(255,215,0,0.04); }
+  .ss-num { font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700; color:var(--text-muted); }
+  .ss-name { font-size:13px; color:var(--text); font-weight:500; }
+  .ss-name small { display:block; font-size:11px; color:var(--text-dim); font-weight:400; }
+  .ss-time { font-size:12px; color:var(--text-muted); text-align:right; }
+  .ss-status { font-family:'Barlow Condensed',sans-serif; font-size:11px; letter-spacing:1px; text-transform:uppercase; text-align:right; min-width:64px; }
+  .ss-status.live  { color:#ff4444; font-weight:700; animation:pulse 1.2s ease-in-out infinite; }
+  .ss-status.next  { color:var(--gold); font-weight:700; }
+  .ss-status.done  { color:var(--text-dim); }
+  .ss-status.soon  { color:var(--text-dim); }
+  .day-header { font-family:'Barlow Condensed',sans-serif; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--text-dim); padding:10px 18px 6px; background:var(--bg3); border-bottom:1px solid var(--border); }
+  .wrc-section-sep { font-family:'Barlow Condensed',sans-serif; font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--text-dim); padding:20px 0 10px; border-bottom:1px solid var(--border); margin-bottom:12px; }
+  .wrc-filter-bar { max-width:1100px; margin:0 auto 24px; padding:0 32px; display:flex; gap:8px; flex-wrap:wrap; }
+  @media(max-width:600px){ .wrc-filter-bar { padding:0 10px; overflow-x:auto; flex-wrap:nowrap; -webkit-overflow-scrolling:touch; scrollbar-width:none; } .wrc-filter-bar::-webkit-scrollbar{display:none;} }
+  .wrc-races-section { max-width:1100px; margin:0 auto; padding:0 32px 64px; }
+  @media(max-width:600px){ .wrc-races-section { padding:0 10px 80px; } }
+
+  /* Live rally info box */
+  .live-rally-box {
+    max-width:1100px; margin:0 auto 0; padding: 0 32px 0;
+  }
+  @media(max-width:600px){ .live-rally-box { padding:0 10px; } }
+  .live-inner {
+    background: rgba(255,40,40,0.07);
+    border: 1px solid rgba(255,68,68,0.3);
+    border-radius:10px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+  @media(max-width:600px){ .live-inner { grid-template-columns:1fr; } }
+  .live-block-label { font-family:'Barlow Condensed',sans-serif; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--text-muted); margin-bottom:4px; }
+  .live-block-val { font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:700; color:#ff4444; }
+  .live-block-val.next-col { color:var(--gold); }
+
+
+  /* ── Update button ───────────────────────────────────────────── */
+  #update-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border-bright);
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    flex-shrink: 0;
+  }
+  #update-btn:hover:not(:disabled) { border-color: var(--red); color: var(--text); }
+  #update-btn:disabled { opacity: 0.4; cursor: default; }
+  #update-btn.loading { border-color: var(--gold); color: var(--gold); }
+  #update-btn.success { border-color: #1a9e75; color: #1a9e75; }
+  #update-btn.error   { border-color: var(--red); color: var(--red); }
+
+  /* Config modal */
+  #gh-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  #gh-modal.show { display: flex; }
+  #gh-modal-box {
+    background: var(--bg2);
+    border: 1px solid var(--border-bright);
+    border-radius: 12px;
+    padding: 28px;
+    width: 100%;
+    max-width: 480px;
+  }
+  #gh-modal-box h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    color: var(--text);
+  }
+  #gh-modal-box p { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5; }
+  #gh-modal-box label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-dim); display: block; margin-bottom: 6px; }
+  #gh-modal-box input {
+    width: 100%;
+    background: var(--bg3);
+    border: 1px solid var(--border-bright);
+    border-radius: 6px;
+    padding: 10px 12px;
+    color: var(--text);
+    font-family: monospace;
+    font-size: 13px;
+    margin-bottom: 12px;
+    outline: none;
+  }
+  #gh-modal-box input:focus { border-color: var(--red); }
+  .modal-row { display: flex; gap: 8px; margin-top: 8px; }
+  .modal-btn {
+    flex: 1;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border-bright);
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+  }
+  .modal-btn.primary { background: var(--red); border-color: var(--red); color: #fff; }
+  .modal-hint { font-size: 11px; color: var(--text-dim); margin-top: 10px; line-height: 1.6; }
+  .modal-hint a { color: var(--gold); text-decoration: none; }
+
+</style>
+</head>
+<body>
+<div class="everything">
+
+<!-- Offline indicator -->
+<div id="offline-bar">Hors ligne — données mises en cache</div>
+
+<!-- PWA Install banner (Chrome/Android) -->
+<div id="install-banner">
+  <span>📲 Installer l'app F1 2026 sur votre écran d'accueil</span>
+  <button id="install-btn">Installer</button>
+  <button class="dismiss" id="dismiss-btn">✕</button>
+</div>
+<!-- iOS Safari install hint -->
+<div id="ios-banner">
+  <span>📲 Installer : appuyez sur <strong>⎙</strong> puis <strong>"Sur l'écran d'accueil"</strong></span>
+  <button class="dismiss" id="ios-dismiss-btn">✕</button>
+</div>
+
+<header>
+  <div class="logo">
+    <img id="header-logo" src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCACUAPwDASIAAhEBAxEB/8QAHAABAAIDAQEBAAAAAAAAAAAAAAcIAQIGBQME/8QAQxAAAQMCAwMIBQoFAwUAAAAAAAECAwQFBgcRITFBEhMXUVNVYZQiMnGRkhQVQlJXk6HR0+MIFmKxwSOBhCQ1Q4Ki/8QAGwEBAAIDAQEAAAAAAAAAAAAAAAUGAgQHAwH/xAA8EQABAgQACgYIBgMBAAAAAAABAAIDBAURBhIhMUFRUmGR4RYXkqGx0hMVIlOBwdHiBzJUYnGCFCPwQv/aAAwDAQACEQMRAD8AuWAAiAAIgACIAAiAAIgACIAAiAAIgACIAAiAAIgACIAAiAAIgACIAAiAAIgACIAAiAAIgACIAAiAAIgACIAAiAAIgACIAAiAAIgACIAAiAAIgACIAAiAAIgC7E1MK5NFCLI1Q4LG2bOCsLyyUtTclrK+PYtLRN517V6nKnosXwcqKRndv4jKpXqlowzHGxfp1dQrnfC1ERPeaMepysA2e/LxVhp+CtXqDQ+DBOKdJs0fC9r/AAViQVVq8/ccSr/oR2unTgjYFd/dT8Ts8sxVXVLhQN/4TTSNflBr4KcZ+HFZcLnEH9voCrbgqN045jd40HkWDpxzG7xoPIsPnSCU38Oaz6tqvtM4nyq3IKjdOOY3eNB5Fg6ccxu8aDyLB0glN/DmnVtV9pnE+VW5BUbpxzG7xoPIsHTjmN3jQeRYOkEpv4c06tqvtM4nyq3IKjdOOY3eNB5Fg6ccxu8aDyLB0glN/DmnVtV9pnE+VW5BUbpxzG7xoPIsHTjmN3jQeRYOkEpv4c06tqvtM4nyq3IKjdOOY3eNB5FgXPHMbvGg8iwdIJTfw5p1bVfaZxPlVuRqnWVbwlmjm1im+Q2ez1NHPUSbXKlExGxN4vevBqa/kd1mnmpU4OtsGH6G4RXTEyMT5XVJE1I4OPqJs1XgnBNqmyyrQHQzFyho1+AUXMYG1CDNMlAWuiOy2BJsNbsmQeOgFTVqCoyZ4Zjaf9yoPIsHTjmN3jQeRYa3SCU38OalOrar7TOJ8qtyCo3TjmN3jQeRYfWizpzOra2Gio6mlqKmd6RwxR29jnSOXciIfRXpVxsAeHNYu/DirNBJcwAfuPlVtNUBzmAIMTx2GJ+Lq+GpukvpyMhiaxkGv0EVE9JU4r17joyZY7GaDayo0aGIUQsDg62kZj/GZAAZLyQABEAPOxDeLfYbVPdLpVR01JA3lPe9fwTrVeo+EhouVkxjnuDWi5OYLe83Whs9sqLlc6mKlpKdivllkXRGon+fArFmtnLdcSyy23D0k9ss/qrIi8meoTx4sTwTb1ng5u5i3DHd1a1Ekp7RTuVaam13ru5b+typu6jhynVOsuikw4Js3Xr5LtuCeA0KTa2an240TOGnM36nuGjWsIiN3bPYZBgry6RYBZBhVRE1VTXnY+0Z8QsV9W4NOdi7RnxIOdi7RnxILFLLcGnOxdoz4kHOxdoz4kFilluDTnYu0Z8SDnYu0Z8SCxSy3BpzsXaM+JBzsXaM+JBYpZbg052LtGfEg52LtGfEgsUstz18HYcuuLL/ABWa0QK+Z6cp8ip6ETOLnL1GcF4au2L73FarLEkkjl1klXbHC3i5ypw8OJL+MMQ2XKLDbsG4MeyoxFUaOuFe5qK6NVT1nL9bT1W7m718ZGTkw9pjRsjB37gq7WKy+BEElJDHmHZhoaNp2oDVpWMW4gs2UWHnYQwfzdRiOdqLcK92irDq3evW7do3ciLqQVI+SWV800j5ZZHK973u1c5y7VVV6zMsks0r5ZpHyyPcrnve7VzlXaqqvFTU8pucMwQALNGYaua2aPR2U5hc448R+VzzncfkBoGhAD7UFJVXCugoaGF09VUPRkMTU1V7l4IagBcbBS7nNY0ucbALWkp6isrIaOkgkqKmd6RxRRt1c9y7kRC1eSuV1Lg2l+c7mkdTfZm+k/TVtO1foM/yvH2bBkplbTYNpGXa6JHU3+Zmj3ptbTNXexn+XcfZsJRREVOsudIpIgARYo9rVq5rh+GeGbqg4yckbQhnO19viiNRFMgE+ucoAAiBdgPNxDerdYbPUXW7VLKajp28p73fgiJxVeCHxxDRcrJjHRHBjBcnIANKziK822xWee7XWqZTUkDVc97v7InFV4IVFzZzEuWO7rtR9LaYHf8ASUqr/wDb+ty/gaZsZhXHHd41dyqa007l+S0mu7+t/W/+xxaJommqr7SmVarGYPo4R9nx5LumB2BraY0TU2LxjmGzz1n4BZADUVz2sa1znvcjWtamquVdyIib1XqIAC66CSBnTeqIiKqquiIibVUlbA2TlVV21b/javbh2ztRJOQ5yNnkb1uV2yNN2/VfBDosA4Is+XVh/nvMFI0rGoi0dCujnROVNjdNzpV9zdviRnmVj29Y4uazV0roaGN6rTUbF9CNOCr9Z3iv+xMNloUmwRJkXcczfmVTolTm61HdL0x2JCabOi2vl1M0HeeGi8hPxRkVht7YbThefEEjF0+UOhSRvt5czk1/9U0NHZ32CnajbfllQtRF2cupjZp7olIUB5mrxxkhgNG4Be7cDqe/LMOfEOtz3fIhTSufUGuzLm1p/wA79kdPUH2c2vz37JCwMfXE3tDgPos+hdF9ye2/zKaenqD7ObX579kdPUH2c2vz37JCwHrib2u4fROhdF9ye2/zKaenqD7ObX579kdPUH2c2vz37JCwHrib2u4fROhlF9ye2/zKaenqD7ObX579kdPUH2c2vz37JCwHrib2u4fROhlF9ye2/wAymnp6g+zm1+e/ZPZwZmpX4tvsVos+WdrfK/bJI6u0ZCzi9y8zsT8V4EKYNw3dsW3+Gy2eBZJ3+lI9U9CGNN73LwRNU9qqiEw4txBZcocOOwdg9Y58QVDOVXVyoirEqp6y/wBfU3gSMpNzT2mLGfZg3DLuGRVys0SkwIgkpKBjzD8wx32aNp3tZANGte/nRmbQYQjmw/heGnS+TM0nnhY1G0jfHRNr9uxOG9eBWqaSSaZ880j5ZZHK573rq5zl3qq9YlkkmmfNNI+WWRyufI9dXPcu9VXiviakVPT75t9zkAzBWygYPy9Gl8RmV5/M7ST9BoHzQA+tFS1NdWQ0VFTyVNVO9I4YY01dI5dyIaQBJsFPOcGgucbALNBSVVfWw0NFTyVNTM5GRRRpq56rwQtVknlbTYMo0ud0RlVfahict6bWUzV/8bOtet3H2G2SuV1Ngyhbcrm2Kov0zNJJEXVlO1foM8eCu4+wk/QudJpIgD0sUe1q1c1w7DLDJ1RJk5M2hDOdr7fFYT2GQCfXOUAARADzMTXu2Yfs092u1U2mpKdvKe53HwROKr1Hxzg0XKzZDdEcGMFycwCziW927D1nqLvdqplNR07eU97uPUiJxVdyIVDzYzBuOO70kj+XTWqnVfklJru4ct/W5fwGauYVzx5dUfM11La4HL8lpOVrp/W7rev4HGFLq1WMwTDhfl8eS7pgdgc2mNE1NC8Y5hoaPrrPwG/Gia66GQb08M1TUR01NC+eeVyMjiYmrnuXciIQQBJsr+XBouVoxr3yMija575HIxjWpqrnKuiIicVVSweAsGWbLCwfzxjd7FubW601LojlhcqbGtT6Ui9fDabYDwZYsq7A7HGN3xvuyM0p4NjuYVdzI0X1pXbEV3DdsTVVh/MTGt3xxfHXG5LzUDNUpaRrtWQN6vF3WvH2E3DhMpzBFii8Q5hq3lUSYmo+E0Z0rKOLZZuR7x/7/a3drPyz4zFxldMcX51zuKrHBHq2kpEXVlOzw63Lxdx9miHNgEPFivivL3m5KusrKwZSC2DBbitbkACGFVETVVRE8TqMt8D3fHN8+QW5Oapo9tTVvaqxwN6v6nLwb+KFoMJZUYJw7SRxx2SluFS1PTq62Jssr14rqqaN9jURCRkaRGmxjDI3WVWq/hlI0V3ongvibI0fydHeVTXnI+0b7xzkfaN95fFlhsjG8ltooWp1JTt/Iz8x2buqj+4b+RJ9Gj7zu5qq9aUL9Me19qobzkfaN945yPtG+8vl8xWbuqi+4b+Q+YrN3VR/cN/IdGj7zu5p1pQv0x7X2qhvOR9o33jnI+0b7y+XzFZu6qL7hv5D5is3dVF9w38h0aPvO7mnWlC/THtfaqG85H2jfee3grDd0xfforPZo0kldtlkX1IWcXOXgn9y662Kzd10f3DfyInznzKtuDmT4ewnFSpe5W8molhY1EpEVNdum9+3YnDevA84lDhSrfSRonsjdn3Z1syuHszVn/4shK/7DmJdcN3nIMgXgYuxFZ8osOLg7Bix1GIKn0rhXKuqwrp6y9btujW7mpt9sDqr3vdJLJJLI9yue+Ryuc9yrqqqq7VVTaWSSaaSaV75JJHq973uVVc5dqqqqakPOThmCABZozDUrrRqMymw3EnHiPyvcc7j8gNA0IAfe30VXca6GhoaeSoqZnIyOKNNXOVTUAJNgpd72saXONgFigpKq4V8FBQ08lRVVD0jhijTVz3LwQtdktlfR4MpEudwZHUX2ZnJfJvSBq/QZ1eK8fYfPJfK6lwVRfOty5FTfp49JJETVtO3s4/HrdvX2HRuzAw1G2udLLXRNoYnS1Tn2+ZEiaia7fR3qm5OPAuFLprJQCLHPtHNu5riuFmFMerudJ04Ewh+YgH2vt1a112iA8D+a7FrZeRXtd89aLb+S1V55OTytU2bE04qe+WBrmuzFc3fBiQ7Y7SL69xt4iyAAyXmgACLD10aqkDZsZf5n47vPPPmslPbKdypR0qV8uiJ9dyc3or1/DcnjPSpqmijRDWmZZkyzEeTbcpSk1aNSo/p4DWl2gkXt/GVVSTIHMDtbD5yT9IdAOP+1sPnJP0i1oI71BJ6jxVn6xa1rb2eaqkuQOYGmySw+ck/SJVybyphwZTvu92+T19/c1UYrFVYqdPqsVU11Xi7TXq8ZXVE0HJTU95ekS0B4e0ZRrUfU8NKrUYBl4rgGnPYWvuJvmVecx8tM08b391xr6iwtp41VKWmbWy8iFvs5r1l4qc10A5gdpYfOSfpFrETRDGiGEWiy0Vxe+5J3rYlcO6pKQWwYIY1rcgAbzVVOgHMDtLD5yT9I+1B/D9jWWuijrq2y09Mrk52WKofI9reOjVjRFX/AHLS6IOShgKDJg3seK93fiJWnAi7R/XmvGwdhq14VskFotEDYoIk2u+lI7i5y8VU9oAl2tDGhrRYBUmLFfGeYkQ3ccpJ0lAAZLzQABEAARc5mC3FctikpsHpb2XCZFbz9XM5jYk62ojXau9uhXibIXMSaZ809TZJZZHK98j66VXOcu9VXmtqlqjGiGhN06FNkGLfJvVio2E85R2Fkq1ovnJFyfjdVU6AcwO0sPnJP0h0A5gdpYfOSfpFq9EM6IanqCT1HipnrGrOtvZ5qqXQDj/tbD5yT9ImHJjK2lwTR/LrisNXfpk0kmZtZA36keqa6dblTVfBNEJMBsS1Jlpd+OwZd6jqphlVanAMvGcA057C19x3LVyIjTh8SYautwtuMYKd9Py7vAxlGkkjkRrkj5PpaIuia9Wp3SpqY5PUb0SG2ILH/sllXZaZfLuxmZ8ncQfEKN6DAtzpsSU1Ws1K6ht1ejrdGr15UVM7lPe1dm9Hu5KJu5LWkkhE0QHyFBbCvirObnYs2QYmj/u85TvQAHqtRAAEQABEAARAAEQABEAARAAEQABEAARAAEQABEAARAAEQABEAARAAEQABEAARAAEQABEAARAAEQABEAARAAEQABEAARAAEQABEAARAAEQABEAARAAEQABEAARAAEQABEAARAAEQABEAARAAEQABEAARAAEQABEAARAAEX//Z" alt="F1" style="height:32px;width:auto;display:block;">
+    <span id="wrc-logo-header" style="display:none;align-items:center;"><img src="data:image/png;base64,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" alt="WRC" style="height:48px;width:auto;display:block;border-radius:4px;"></span><span class="logo-text">2026 &nbsp;·&nbsp; Calendrier</span><span style="font-family:'Barlow',sans-serif;font-size:11px;color:var(--gold);letter-spacing:1px;margin-left:8px;align-self:flex-end;padding-bottom:2px;">by Jedla</span>
+  </div>
+  <button id="update-btn" onclick="handleUpdate()" title="Mettre à jour les données">↻ Update</button>
+  <button onclick="resetGhConfig()" title="Reconfigurer GitHub" style="background:transparent;border:none;color:var(--text-dim);font-size:16px;cursor:pointer;padding:4px 6px;line-height:1;" id="config-btn">⚙</button>
+  <div class="clock-utc"><span id="data-version" style="font-size:10px;color:var(--text-dim);margin-right:8px;"></span><span id="tz-label">Heure locale</span> &nbsp;— &nbsp;<span id="live-clock">--:--:--</span></div>
+</header>
+<div class="tab-nav">
+  <button class="tab-nav-btn active" id="btn-f1" onclick="switchTab('f1')">🏎 Formule 1</button>
+  <button class="tab-nav-btn" id="btn-wrc" onclick="switchTab('wrc')">🏔 WRC Rallye</button>
+</div>
+
+<div class="tab-panel active" id="panel-f1">
+
+<div class="hero">
+  <div class="hero-label">Prochain Grand Prix</div>
+  <div class="hero-race-name" id="hero-name">—</div>
+  <div class="hero-race-sub">
+    <span class="flag" id="hero-flag"></span>
+    <span id="hero-circuit"></span>
+    <span id="hero-dates"></span>
+  </div>
+
+  <div class="countdown-grid">
+    <div class="countdown-card main">
+      <div class="countdown-card-label">Compte à rebours</div>
+      <div class="countdown-card-title" id="main-countdown-title">Course</div>
+      <div class="timer-row">
+        <div class="timer-unit">
+          <span class="timer-num" id="cd-days">--</span>
+          <span class="timer-label">Jours</span>
+        </div>
+        <span class="timer-sep">:</span>
+        <div class="timer-unit">
+          <span class="timer-num" id="cd-hours">--</span>
+          <span class="timer-label">Heures</span>
+        </div>
+        <span class="timer-sep">:</span>
+        <div class="timer-unit">
+          <span class="timer-num" id="cd-mins">--</span>
+          <span class="timer-label">Min</span>
+        </div>
+        <span class="timer-sep">:</span>
+        <div class="timer-unit">
+          <span class="timer-num" id="cd-secs">--</span>
+          <span class="timer-label">Sec</span>
+        </div>
+      </div>
+      <div class="session-date-line" id="main-date-line"></div>
+    </div>
+
+    <div class="countdown-card session">
+      <div class="countdown-card-label">Prochaine session</div>
+      <div class="countdown-card-title" id="session-countdown-title">—</div>
+      <div class="timer-row">
+        <div class="timer-unit">
+          <span class="timer-num" id="sd-days">--</span>
+          <span class="timer-label">Jours</span>
+        </div>
+        <span class="timer-sep">:</span>
+        <div class="timer-unit">
+          <span class="timer-num" id="sd-hours">--</span>
+          <span class="timer-label">Heures</span>
+        </div>
+        <span class="timer-sep">:</span>
+        <div class="timer-unit">
+          <span class="timer-num" id="sd-mins">--</span>
+          <span class="timer-label">Min</span>
+        </div>
+        <span class="timer-sep">:</span>
+        <div class="timer-unit">
+          <span class="timer-num" id="sd-secs">--</span>
+          <span class="timer-label">Sec</span>
+        </div>
+      </div>
+      <div class="session-date-line" id="session-date-line"></div>
+    </div>
+  </div>
+</div>
+
+<div class="filter-bar">
+  <button class="tab" onclick="filterRaces('all',this)">Tous les GP</button>
+  <button class="tab" onclick="filterRaces('sprint',this)">Week-ends Sprint</button>
+  <button class="tab active" onclick="filterRaces('upcoming',this)">À venir</button>
+  <button class="tab" onclick="filterRaces('past',this)">Terminés</button>
+</div>
+
+<div class="races-section" id="races-container"><div style="padding:40px;text-align:center;color:var(--text-dim);font-family:'Barlow Condensed',sans-serif;letter-spacing:2px;font-size:13px;">Chargement...</div></div>
+
+</div><!-- /panel-f1 -->
+
+<div class="tab-panel" id="panel-wrc">
+  <!-- WRC Hero countdown -->
+  <div class="wrc-hero">
+    <div class="wrc-label">Prochain Rallye WRC</div>
+    <div class="wrc-name" id="wrc-hero-name">—</div>
+    <div class="wrc-sub">
+      <span id="wrc-hero-flag"></span>
+      <span id="wrc-hero-loc"></span>
+      <span id="wrc-hero-dates"></span>
+    </div>
+    <div class="countdown-grid" id="wrc-countdown-grid">
+      <div class="countdown-card wrc-main" id="wrc-main-card">
+        <div class="countdown-card-label">Compte à rebours</div>
+        <div class="countdown-card-title" id="wrc-main-title">Rallye</div>
+        <div class="timer-row">
+          <div class="timer-unit"><span class="timer-num" id="wrc-cd-days">--</span><span class="timer-label">Jours</span></div>
+          <span class="timer-sep">:</span>
+          <div class="timer-unit"><span class="timer-num" id="wrc-cd-hours">--</span><span class="timer-label">Heures</span></div>
+          <span class="timer-sep">:</span>
+          <div class="timer-unit"><span class="timer-num" id="wrc-cd-mins">--</span><span class="timer-label">Min</span></div>
+          <span class="timer-sep">:</span>
+          <div class="timer-unit"><span class="timer-num" id="wrc-cd-secs">--</span><span class="timer-label">Sec</span></div>
+        </div>
+        <div class="session-date-line" id="wrc-main-dateline"></div>
+      </div>
+      <div class="countdown-card wrc-session" id="wrc-sess-card">
+        <div class="countdown-card-label">Prochaine session</div>
+        <div class="countdown-card-title" id="wrc-sess-title">—</div>
+        <div class="timer-row">
+          <div class="timer-unit"><span class="timer-num" id="wrc-sd-days">--</span><span class="timer-label">Jours</span></div>
+          <span class="timer-sep">:</span>
+          <div class="timer-unit"><span class="timer-num" id="wrc-sd-hours">--</span><span class="timer-label">Heures</span></div>
+          <span class="timer-sep">:</span>
+          <div class="timer-unit"><span class="timer-num" id="wrc-sd-mins">--</span><span class="timer-label">Min</span></div>
+          <span class="timer-sep">:</span>
+          <div class="timer-unit"><span class="timer-num" id="wrc-sd-secs">--</span><span class="timer-label">Sec</span></div>
+        </div>
+        <div class="session-date-line" id="wrc-sess-dateline"></div>
+      </div>
+    </div>
+    <!-- Live rally info (2 boxes: SS en cours + SS suivante) -->
+    <div id="wrc-live-box" style="display:none">
+      <div class="live-inner">
+        <div>
+          <div class="live-block-label">🔴 Spéciale en cours</div>
+          <div class="live-block-val" id="wrc-live-ss-name">—</div>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:4px" id="wrc-live-ss-dist"></div>
+        </div>
+        <div>
+          <div class="live-block-label">⏭ Prochaine spéciale</div>
+          <div class="live-block-val next-col" id="wrc-next-ss-name">—</div>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:4px" id="wrc-next-ss-time"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrc-filter-bar">
+    <button class="tab" onclick="wrcFilter('all',this)">Tous les Rallyes</button>
+    <button class="tab active" onclick="wrcFilter('upcoming',this)">À venir</button>
+    <button class="tab" onclick="wrcFilter('past',this)">Terminés</button>
+  </div>
+
+  <div class="wrc-races-section" id="wrc-races-container"><div style="padding:40px;text-align:center;color:var(--text-dim);font-family:'Barlow Condensed',sans-serif;letter-spacing:2px;font-size:13px;">Chargement...</div></div>
+</div><!-- /panel-wrc -->
+
+
+<!-- GitHub config modal -->
+<div id="gh-modal">
+  <div id="gh-modal-box">
+    <h3>⚙ Configuration GitHub</h3>
+    <p>Pour déclencher la mise à jour, entrez vos informations GitHub. Elles sont stockées uniquement dans votre navigateur.</p>
+    <label>Propriétaire du repo (username GitHub)</label>
+    <input type="text" id="gh-owner" placeholder="ex: jedla" autocomplete="off">
+    <label>Nom du repository</label>
+    <input type="text" id="gh-repo" placeholder="ex: f1-wrc-tracker" autocomplete="off">
+    <label>Personal Access Token (scope: workflow)</label>
+    <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off">
+    <div class="modal-hint">
+      Créer un token : <a href="https://github.com/settings/tokens/new?scopes=workflow" target="_blank">github.com/settings/tokens</a><br>
+      Cochez uniquement le scope <strong>workflow</strong>. Ces données restent dans votre navigateur (localStorage).
+    </div>
+    <div class="modal-row">
+      <button class="modal-btn" onclick="closeModal()">Annuler</button>
+      <button class="modal-btn primary" onclick="saveAndTrigger()">Enregistrer & Lancer</button>
+    </div>
+  </div>
+</div>
+
+</div><!-- /everything -->
+
+
+<script>
+// Use the system's local timezone automatically (no fixed offset)
+
+// All sessions stored in UTC timestamps (milliseconds)
+// Format: new Date(Date.UTC(year, month-1, day, hour, minute))
+// ── Data loaded from data.json (auto-updated daily by GitHub Actions) ──────────
+let RACES = [];
+let WRC_RALLIES = [];
+
+function isoToMs(isoStr) {
+  return new Date(isoStr).getTime();
+}
+
+function adaptF1(races) {
+  return races.map(r => ({
+    ...r,
+    sessions: (r.sessions || []).map(s => ({
+      ...s,
+      utc: isoToMs(s.utc)
+    }))
+  }));
+}
+
+
+function adaptWrc(rallies) {
+  return rallies.map(r => ({
+    ...r,
+    stages: (r.stages || []).map(s => ({
+      ...s,
+      utc: isoToMs(s.utc)
+    }))
+  }));
+}
+
+// ─── Session durations (minutes) ─────────────────────────────────────────────
+const SESSION_DURATION = {
+  fp:     60,
+  q:      45,
+  sprint: 30,
+  race:   120,
+};
+
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+function nowUTC() { return Date.now(); }
+function pad(n) { return String(Math.floor(n)).padStart(2,'0'); }
+
+function diffToComponents(ms) {
+  if (ms <= 0) return { days:0, hours:0, mins:0, secs:0 };
+  const totalSec = Math.floor(ms / 1000);
+  const days  = Math.floor(totalSec / 86400);
+  const hours = Math.floor((totalSec % 86400) / 3600);
+  const mins  = Math.floor((totalSec % 3600) / 60);
+  const secs  = totalSec % 60;
+  return { days, hours, mins, secs };
+}
+
+function utcToLocalDisplay(utcMs) {
+  const d = new Date(utcMs);
+  const days = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
+  const months = ['jan.','fév.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
+  const dow = days[d.getDay()];
+  const day = d.getDate();
+  const mon = months[d.getMonth()];
+  const hh  = pad(d.getHours());
+  const mm  = pad(d.getMinutes());
+  const tzOffset = -d.getTimezoneOffset();
+  const tzSign = tzOffset >= 0 ? '+' : '-';
+  const tzH = Math.floor(Math.abs(tzOffset) / 60);
+  const tzM = Math.abs(tzOffset) % 60;
+  const tzLabel = tzM === 0 ? `UTC${tzSign}${tzH}` : `UTC${tzSign}${pad(tzH)}:${pad(tzM)}`;
+  return `${dow} ${day} ${mon} — ${hh}:${mm} (${tzLabel})`;
+}
+
+function getLiveClock() {
+  const now = new Date();
+  return `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+}
+
+function sessionEndUtc(s) {
+  return s.utc + (SESSION_DURATION[s.type] || 60) * 60000;
+}
+
+function getSessionStatus(s, now) {
+  const end = sessionEndUtc(s);
+  if (now < s.utc) return 'upcoming';
+  if (now < end)   return 'live';
+  return 'past';
+}
+
+function findNextRace() {
+  const now = nowUTC();
+  return RACES.find(r => !r.cancelled && r.sessions.length > 0 && r.sessions[r.sessions.length-1].utc > now) || null;
+}
+
+function findNextSession() {
+  const now = nowUTC();
+  for (const race of RACES) {
+    if (race.cancelled) continue;
+    for (const s of race.sessions) {
+      if (sessionEndUtc(s) > now) return { session: s, race };
+    }
+  }
+  return null;
+}
+
+// ─── F1 Hero countdown ────────────────────────────────────────────────────────
+function updateHero() {
+  const nowDate = new Date();
+  const now = nowDate.getTime();
+  document.getElementById('live-clock').textContent = getLiveClock();
+  const tzOffset = -nowDate.getTimezoneOffset();
+  const tzSign = tzOffset >= 0 ? '+' : '-';
+  const tzH = Math.floor(Math.abs(tzOffset) / 60);
+  const tzM = Math.abs(tzOffset) % 60;
+  const tzLabel = tzM === 0 ? `UTC${tzSign}${tzH}` : `UTC${tzSign}${pad(tzH)}:${pad(tzM)}`;
+  document.getElementById('tz-label').textContent = tzLabel;
+
+  const nextRace = findNextRace();
+  const nextSess = findNextSession();
+
+  if (nextRace) {
+    const raceSession = nextRace.sessions[nextRace.sessions.length-1];
+    const raceMs = raceSession.utc - now;
+    const rc = diffToComponents(raceMs);
+    document.getElementById('hero-name').textContent = nextRace.name;
+    document.getElementById('hero-flag').textContent = nextRace.flag;
+    document.getElementById('hero-circuit').textContent = nextRace.circuit;
+    document.getElementById('hero-dates').textContent = '· ' + nextRace.dates;
+    document.getElementById('main-countdown-title').textContent = 'Course — ' + nextRace.short;
+    document.getElementById('cd-days').textContent  = pad(rc.days);
+    document.getElementById('cd-hours').textContent = pad(rc.hours);
+    document.getElementById('cd-mins').textContent  = pad(rc.mins);
+    document.getElementById('cd-secs').textContent  = pad(rc.secs);
+    document.getElementById('main-date-line').textContent = utcToLocalDisplay(raceSession.utc);
+  }
+
+  if (nextSess) {
+    const sessStatus = getSessionStatus(nextSess.session, now);
+    const sessMs = sessStatus === 'live'
+      ? sessionEndUtc(nextSess.session) - now
+      : nextSess.session.utc - now;
+    const sc = diffToComponents(sessMs);
+    let title = nextSess.session.label;
+    if (nextSess.race.name !== (findNextRace() && findNextRace().name)) {
+      title += ' — ' + nextSess.race.short;
+    }
+    if (sessStatus === 'live') title = '🔴 ' + title;
+    document.getElementById('session-countdown-title').textContent =
+      sessStatus === 'live' ? title + ' (fin dans)' : title;
+    document.getElementById('sd-days').textContent  = pad(sc.days);
+    document.getElementById('sd-hours').textContent = pad(sc.hours);
+    document.getElementById('sd-mins').textContent  = pad(sc.mins);
+    document.getElementById('sd-secs').textContent  = pad(sc.secs);
+    const dateLineEl = document.getElementById('session-date-line');
+    if (sessStatus === 'live') {
+      dateLineEl.innerHTML = `<span style="color:#ff4444;font-weight:600">🔴 En cours</span> — se termine à ${utcToLocalDisplay(sessionEndUtc(nextSess.session)).split('—')[1].trim()}`;
+    } else {
+      dateLineEl.textContent = utcToLocalDisplay(nextSess.session.utc);
+    }
+  }
+}
+
+// ─── F1 Race list ─────────────────────────────────────────────────────────────
+let currentFilter = 'upcoming';
+let openRounds = new Set();
+
+function filterRaces(f, btn) {
+  currentFilter = f;
+  document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderRaces();
+}
+
+function toggleCard(key) {
+  if (openRounds.has(key)) openRounds.delete(key);
+  else openRounds.add(key);
+  renderRaces();
+}
+
+document.getElementById('races-container').addEventListener('click', e => {
+  const card = e.target.closest('[data-card-key]');
+  if (card) toggleCard(card.dataset.cardKey);
+});
+
+function renderRaces() {
+  const now = nowUTC();
+  const nextRace = findNextRace();
+  const nextSess = findNextSession();
+  const container = document.getElementById('races-container');
+
+  const classified = RACES.map(r => {
+    let status = 'upcoming';
+    if (r.cancelled) status = 'cancelled';
+    else if (r.sessions.length > 0 && r.sessions[r.sessions.length-1].utc < now) status = 'past';
+    const isNext = !r.cancelled && nextRace && r.round === nextRace.round;
+    return { ...r, status, isNext };
+  });
+
+  const visible = classified.filter(r => {
+    if (currentFilter === 'sprint') return r.sprint && !r.cancelled;
+    if (currentFilter === 'upcoming') return r.status === 'upcoming' && !r.cancelled;
+    if (currentFilter === 'past') return r.status === 'past';
+    return true;
+  });
+
+  let html = '';
+  let prevStatus = null;
+
+  visible.forEach(r => {
+    if (currentFilter === 'all') {
+      if (prevStatus !== 'past' && r.status === 'past') html += `<div class="section-sep">Terminés</div>`;
+      if (prevStatus === 'past' && r.status !== 'past') html += `<div class="section-sep">À venir</div>`;
+      if (r.status === 'cancelled' && prevStatus !== 'cancelled') html += `<div class="section-sep" style="color:#e86070">Annulés</div>`;
+    }
+    prevStatus = r.status;
+
+    const cardKey = String(r.round) + '|||' + r.name;
+    const isOpen = openRounds.has(cardKey);
+    const cardCls = ['race-card', r.status === 'cancelled' ? 'cancelled':'', r.status === 'past' ? 'past':'', r.isNext ? 'is-next':''].filter(Boolean).join(' ');
+
+    let badges = '';
+    if (r.isNext) badges += `<span class="badge badge-next">Prochain</span>`;
+    if (r.sprint) badges += `<span class="badge badge-sprint">Sprint</span>`;
+    if (r.isNew)  badges += `<span class="badge badge-new">Nouveau</span>`;
+    if (r.status === 'past') badges += `<span class="badge badge-done">Terminé</span>`;
+    if (r.cancelled) badges += `<span class="badge badge-cancel">Annulé</span>`;
+
+    let sessionsHtml = '';
+    if (isOpen && r.sessions.length > 0) {
+      sessionsHtml = r.sessions.map(s => {
+        const status = getSessionStatus(s, now);
+        const isCurrentNextSess = nextSess && nextSess.session.utc === s.utc && nextSess.race.round === r.round;
+        const rowCls = ['session-item',
+          status === 'past' ? 'past-session' : '',
+          status === 'live' ? 'live-session' : '',
+          (isCurrentNextSess && status === 'upcoming') ? 'is-next-session' : ''
+        ].filter(Boolean).join(' ');
+        const dotCls = { fp:'dot-fp', q:'dot-q', sprint:'dot-sprint', race:'dot-race' }[s.type] || 'dot-fp';
+        const durMin = SESSION_DURATION[s.type] || 60;
+        let statusLabel = '';
+        if (status === 'live') {
+          statusLabel = `<span class="session-status status-live">🔴 En cours</span>`;
+        } else if (status === 'past') {
+          statusLabel = `<span class="session-status status-done">Terminé</span>`;
+        } else if (isCurrentNextSess) {
+          statusLabel = `<span class="session-status status-next">▶ Prochain</span>`;
+        } else {
+          statusLabel = `<span class="session-status status-upcoming">À venir</span>`;
+        }
+        return `<div class="${rowCls}">
+          <span class="session-dot ${dotCls}"></span>
+          <span class="session-type">${s.label}</span>
+          <span class="session-datetime">${utcToLocalDisplay(s.utc)} <span class="session-dur">${durMin} min</span></span>
+          ${statusLabel}
+        </div>`;
+      }).join('');
+      if (r.note) sessionsHtml += `<div style="padding:8px 18px;font-size:12px;color:var(--gold);border-top:1px solid var(--border);">⚠ ${r.note}</div>`;
+    }
+
+    const clickAttr = r.cancelled ? '' : `data-card-key="${cardKey.replace(/"/g, '&quot;')}"`;
+    const arrowLabel = r.sessions.length > 0 ? (isOpen ? '▲ Fermer' : '▼ Sessions') : '';
+
+    html += `<div class="${cardCls}" ${clickAttr}>
+      <div class="race-header">
+        <div class="round-num">R<span>${r.cancelled ? '✕' : (r.round || '—')}</span></div>
+        <div class="race-main">
+          <div class="race-name-row">
+            <span class="race-flag" style="font-size:18px">${r.flag}</span>
+            <span class="race-name">${r.name}</span>
+            ${badges}
+          </div>
+          <div class="race-circuit">${r.circuit} · ${r.city}</div>
+        </div>
+        <div class="race-dates-col">
+          <div class="race-dates-main">${r.dates}</div>
+          <div class="race-dates-year">2026</div>
+          <div class="toggle-hint">${arrowLabel}</div>
+        </div>
+      </div>
+      ${r.sessions.length > 0 ? `<div class="sessions-panel ${isOpen ? 'open' : ''}">${sessionsHtml}</div>` : ''}
+    </div>`;
+  });
+
+  container.innerHTML = html || `<div style="padding:40px;text-align:center;color:var(--text-dim);font-family:var(--font-condensed)">Aucun Grand Prix dans cette catégorie.</div>`;
+}
+
+// ── Tab switching ─────────────────────────────────────────────────────────────
+function switchTab(tab) {
+  document.getElementById('panel-f1').classList.toggle('active', tab === 'f1');
+  document.getElementById('panel-wrc').classList.toggle('active', tab === 'wrc');
+  document.getElementById('btn-f1').classList.toggle('active', tab === 'f1');
+  document.getElementById('btn-wrc').classList.toggle('active', tab === 'wrc');
+  const f1Logo = document.getElementById('header-logo');
+  const wrcLogo = document.getElementById('wrc-logo-header');
+  if (f1Logo) f1Logo.style.display = tab === 'f1' ? 'block' : 'none';
+  if (wrcLogo) wrcLogo.style.display = tab === 'wrc' ? 'flex' : 'none';
+}
+
+// ── PWA iOS banner ────────────────────────────────────────────────────────────
+const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent);
+const isInStandaloneMode = ('standalone' in navigator) && navigator.standalone;
+const iosBanner = document.getElementById('ios-banner');
+const iosDismissBtn = document.getElementById('ios-dismiss-btn');
+if (isIos && !isInStandaloneMode && !sessionStorage.getItem('ios-dismissed')) {
+  iosBanner && iosBanner.classList.add('show');
+}
+if (iosDismissBtn) {
+  iosDismissBtn.addEventListener('click', () => {
+    iosBanner.classList.remove('show');
+    sessionStorage.setItem('ios-dismissed', '1');
+  });
+}
+
+// ── PWA Install (Chrome/Android) ──────────────────────────────────────────────
+let deferredPrompt = null;
+const installBanner = document.getElementById('install-banner');
+const installBtn = document.getElementById('install-btn');
+const dismissBtn = document.getElementById('dismiss-btn');
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  if (!sessionStorage.getItem('pwa-dismissed')) installBanner && installBanner.classList.add('show');
+});
+installBtn && installBtn.addEventListener('click', async () => {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+  deferredPrompt = null;
+  installBanner.classList.remove('show');
+});
+dismissBtn && dismissBtn.addEventListener('click', () => {
+  installBanner && installBanner.classList.remove('show');
+  sessionStorage.setItem('pwa-dismissed', '1');
+});
+window.addEventListener('appinstalled', () => {
+  installBanner && installBanner.classList.remove('show');
+  deferredPrompt = null;
+});
+
+// ── Offline detection ─────────────────────────────────────────────────────────
+const offlineBar = document.getElementById('offline-bar');
+function updateOnlineStatus() {
+  offlineBar && offlineBar.classList.toggle('show', !navigator.onLine);
+}
+window.addEventListener('online', updateOnlineStatus);
+window.addEventListener('offline', updateOnlineStatus);
+updateOnlineStatus();
+
+
+const FALLBACK_DATA = {"version":"2026-05-07T06:37:53Z","f1":[{"round":1,"name":"Grand Prix d'Australie","short":"Australie","circuit":"Albert Park","city":"Melbourne","flag":"🇦🇺","dates":"6–8 mars","sprint":false,"cancelled":false,"sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-03-06T03:00:00Z"},{"label":"Essais Libres 2","type":"fp","utc":"2026-03-06T07:00:00Z"},{"label":"Essais Libres 3","type":"fp","utc":"2026-03-07T03:30:00Z"},{"label":"Qualifications","type":"q","utc":"2026-03-07T07:00:00Z"},{"label":"Course","type":"race","utc":"2026-03-08T06:00:00Z"}]},{"round":2,"name":"Grand Prix de Chine","short":"Chine","circuit":"Shanghai International Circuit","city":"Shanghai","flag":"🇨🇳","dates":"13–15 mars","sprint":true,"cancelled":false,"sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-03-13T03:30:00Z"},{"label":"Qualifs Sprint","type":"q","utc":"2026-03-13T07:30:00Z"},{"label":"Course Sprint","type":"sprint","utc":"2026-03-14T03:00:00Z"},{"label":"Qualifications","type":"q","utc":"2026-03-14T07:00:00Z"},{"label":"Course","type":"race","utc":"2026-03-15T07:00:00Z"}]},{"round":3,"name":"Grand Prix du Japon","short":"Japon","circuit":"Suzuka Circuit","city":"Suzuka","flag":"🇯🇵","dates":"27–29 mars","sprint":false,"cancelled":false,"sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-03-27T02:30:00Z"},{"label":"Essais Libres 2","type":"fp","utc":"2026-03-27T06:00:00Z"},{"label":"Essais Libres 3","type":"fp","utc":"2026-03-28T02:30:00Z"},{"label":"Qualifications","type":"q","utc":"2026-03-28T06:00:00Z"},{"label":"Course","type":"race","utc":"2026-03-29T05:00:00Z"}]},{"round":null,"name":"Grand Prix de Bahreïn","short":"Bahreïn","circuit":"Bahrain International Circuit","city":"Sakhir","flag":"🇧🇭","dates":"10–12 avril","sprint":false,"cancelled":true,"sessions":[]},{"round":null,"name":"Grand Prix d'Arabie Saoudite","short":"Arabie Saoudite","circuit":"Jeddah Corniche Circuit","city":"Djeddah","flag":"🇸🇦","dates":"17–19 avril","sprint":false,"cancelled":true,"sessions":[]},{"round":4,"name":"Grand Prix de Miami","short":"Miami","circuit":"Miami International Autodrome","city":"Miami","flag":"🇺🇸","dates":"1–3 mai","sprint":true,"cancelled":false,"sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-05-01T16:00:00Z"},{"label":"Qualifs Sprint","type":"q","utc":"2026-05-01T20:30:00Z"},{"label":"Course Sprint","type":"sprint","utc":"2026-05-02T16:00:00Z"},{"label":"Qualifications","type":"q","utc":"2026-05-02T20:00:00Z"},{"label":"Course","type":"race","utc":"2026-05-03T17:00:00Z"}]},{"round":5,"name":"Grand Prix du Canada","short":"Canada","circuit":"Circuit Gilles Villeneuve","city":"Montréal","flag":"🇨🇦","dates":"22–24 mai","sprint":true,"cancelled":false,"sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-05-22T16:30:00Z"},{"label":"Qualifs Sprint","type":"q","utc":"2026-05-22T20:30:00Z"},{"label":"Course Sprint","type":"sprint","utc":"2026-05-23T16:00:00Z"},{"label":"Qualifications","type":"q","utc":"2026-05-23T20:00:00Z"},{"label":"Course","type":"race","utc":"2026-05-24T18:00:00Z"}]},{"round":6,"name":"Grand Prix de Monaco","short":"Monaco","circuit":"Circuit de Monaco","city":"Monaco","flag":"🇲🇨","dates":"5–7 juin","sprint":false,"cancelled":false,"sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-06-05T10:30:00Z"},{"label":"Essais Libres 2","type":"fp","utc":"2026-06-05T14:00:00Z"},{"label":"Essais Libres 3","type":"fp","utc":"2026-06-06T10:30:00Z"},{"label":"Qualifications","type":"q","utc":"2026-06-06T14:00:00Z"},{"label":"Course","type":"race","utc":"2026-06-07T13:00:00Z"}]},{"round":7,"name":"Grand Prix d'Espagne","short":"Espagne (Barcelone)","circuit":"Circuit de Barcelona-Catalunya","city":"Barcelone","flag":"🇪🇸","dates":"12–14 juin","sprint":false,"cancelled":false,"sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-06-12T10:30:00Z"},{"label":"Essais Libres 2","type":"fp","utc":"2026-06-12T14:00:00Z"},{"label":"Essais Libres 3","type":"fp","utc":"2026-06-13T10:30:00Z"},{"label":"Qualifications","type":"q","utc":"2026-06-13T14:00:00Z"},{"label":"Course","type":"race","utc":"2026-06-14T13:00:00Z"}]},{"round":8,"name":"Grand Prix d'Autriche","short":"Autriche","circuit":"Red Bull Ring","city":"Spielberg","flag":"🇦🇹","dates":"26–28 juin","sprint":false,"cancelled":false,"sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-06-26T10:30:00Z"},{"label":"Essais Libres 2","type":"fp","utc":"2026-06-26T14:00:00Z"},{"label":"Essais Libres 3","type":"fp","utc":"2026-06-27T10:30:00Z"},{"label":"Qualifications","type":"q","utc":"2026-06-27T14:00:00Z"},{"label":"Course","type":"race","utc":"2026-06-28T13:00:00Z"}]},{"round":9,"name":"Grand Prix de Grande-Bretagne","short":"Grande-Bretagne","circuit":"Silverstone Circuit","city":"Silverstone","flag":"🇬🇧","dates":"3–5 juillet","sprint":true,"cancelled":false,"sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-07-03T11:30:00Z"},{"label":"Qualifs Sprint","type":"q","utc":"2026-07-03T15:30:00Z"},{"label":"Course Sprint","type":"sprint","utc":"2026-07-04T11:00:00Z"},{"label":"Qualifications","type":"q","utc":"2026-07-04T15:00:00Z"},{"label":"Course","type":"race","utc":"2026-07-05T14:00:00Z"}]},{"round":10,"name":"Grand Prix de Belgique","short":"Belgique","circuit":"Circuit de Spa-Francorchamps","city":"Spa-Francorchamps","flag":"🇧🇪","dates":"17–19 juillet","sprint":false,"cancelled":false,"sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-07-17T10:30:00Z"},{"label":"Essais Libres 2","type":"fp","utc":"2026-07-17T14:00:00Z"},{"label":"Essais Libres 3","type":"fp","utc":"2026-07-18T10:30:00Z"},{"label":"Qualifications","type":"q","utc":"2026-07-18T14:00:00Z"},{"label":"Course","type":"race","utc":"2026-07-19T13:00:00Z"}]},{"round":11,"name":"Grand Prix de Hongrie","short":"Hongrie","circuit":"Hungaroring","city":"Budapest","flag":"🇭🇺","dates":"24–26 juillet","sprint":false,"cancelled":false,"sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-07-24T10:30:00Z"},{"label":"Essais Libres 2","type":"fp","utc":"2026-07-24T14:00:00Z"},{"label":"Essais Libres 3","type":"fp","utc":"2026-07-25T10:30:00Z"},{"label":"Qualifications","type":"q","utc":"2026-07-25T14:00:00Z"},{"label":"Course","type":"race","utc":"2026-07-26T13:00:00Z"}]},{"round":12,"name":"Grand Prix des Pays-Bas","short":"Pays-Bas","circuit":"Circuit Zandvoort","city":"Zandvoort","flag":"🇳🇱","dates":"21–23 août","sprint":true,"cancelled":false,"sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-08-21T10:30:00Z"},{"label":"Qualifs Sprint","type":"q","utc":"2026-08-21T14:30:00Z"},{"label":"Course Sprint","type":"sprint","utc":"2026-08-22T10:00:00Z"},{"label":"Qualifications","type":"q","utc":"2026-08-22T13:00:00Z"},{"label":"Course","type":"race","utc":"2026-08-23T13:00:00Z"}]},{"round":13,"name":"Grand Prix d'Italie","short":"Italie","circuit":"Autodromo Nazionale di Monza","city":"Monza","flag":"🇮🇹","dates":"4–6 septembre","sprint":false,"cancelled":false,"sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-09-04T10:30:00Z"},{"label":"Essais Libres 2","type":"fp","utc":"2026-09-04T14:00:00Z"},{"label":"Essais Libres 3","type":"fp","utc":"2026-09-05T10:30:00Z"},{"label":"Qualifications","type":"q","utc":"2026-09-05T14:00:00Z"},{"label":"Course","type":"race","utc":"2026-09-06T13:00:00Z"}]},{"round":14,"name":"Grand Prix d'Espagne (Madrid)","short":"Madrid","circuit":"Madring","city":"Madrid","flag":"🇪🇸","dates":"11–13 septembre","sprint":false,"cancelled":false,"isNew":true,"sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-09-11T10:30:00Z"},{"label":"Essais Libres 2","type":"fp","utc":"2026-09-11T14:00:00Z"},{"label":"Essais Libres 3","type":"fp","utc":"2026-09-12T10:30:00Z"},{"label":"Qualifications","type":"q","utc":"2026-09-12T14:00:00Z"},{"label":"Course","type":"race","utc":"2026-09-13T13:00:00Z"}]},{"round":15,"name":"Grand Prix d'Azerbaïdjan","short":"Azerbaïdjan","circuit":"Baku City Circuit","city":"Bakou","flag":"🇦🇿","dates":"25–27 septembre","sprint":false,"cancelled":false,"note":"Course le samedi","sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-09-25T08:00:00Z"},{"label":"Essais Libres 2","type":"fp","utc":"2026-09-26T05:30:00Z"},{"label":"Qualifications","type":"q","utc":"2026-09-26T09:00:00Z"},{"label":"Course","type":"race","utc":"2026-09-27T09:00:00Z"}]},{"round":16,"name":"Grand Prix de Singapour","short":"Singapour","circuit":"Marina Bay Street Circuit","city":"Marina Bay","flag":"🇸🇬","dates":"9–11 octobre","sprint":true,"cancelled":false,"sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-10-09T09:30:00Z"},{"label":"Qualifs Sprint","type":"q","utc":"2026-10-09T13:30:00Z"},{"label":"Course Sprint","type":"sprint","utc":"2026-10-10T09:00:00Z"},{"label":"Qualifications","type":"q","utc":"2026-10-10T13:00:00Z"},{"label":"Course","type":"race","utc":"2026-10-11T12:00:00Z"}]},{"round":17,"name":"Grand Prix des États-Unis","short":"États-Unis","circuit":"Circuit of the Americas","city":"Austin, Texas","flag":"🇺🇸","dates":"23–25 octobre","sprint":false,"cancelled":false,"sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-10-23T17:30:00Z"},{"label":"Essais Libres 2","type":"fp","utc":"2026-10-23T21:00:00Z"},{"label":"Essais Libres 3","type":"fp","utc":"2026-10-24T16:30:00Z"},{"label":"Qualifications","type":"q","utc":"2026-10-24T20:00:00Z"},{"label":"Course","type":"race","utc":"2026-10-25T19:00:00Z"}]},{"round":18,"name":"Grand Prix du Mexique","short":"Mexique","circuit":"Autodromo Hermanos Rodriguez","city":"Mexico City","flag":"🇲🇽","dates":"30 oct. – 1er nov.","sprint":false,"cancelled":false,"sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-10-30T19:30:00Z"},{"label":"Essais Libres 2","type":"fp","utc":"2026-10-30T23:00:00Z"},{"label":"Essais Libres 3","type":"fp","utc":"2026-10-31T19:30:00Z"},{"label":"Qualifications","type":"q","utc":"2026-10-31T23:00:00Z"},{"label":"Course","type":"race","utc":"2026-11-01T20:00:00Z"}]},{"round":19,"name":"Grand Prix de São Paulo","short":"São Paulo","circuit":"Autodromo José Carlos Pace (Interlagos)","city":"São Paulo","flag":"🇧🇷","dates":"6–8 novembre","sprint":false,"cancelled":false,"sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-11-06T16:30:00Z"},{"label":"Essais Libres 2","type":"fp","utc":"2026-11-06T20:00:00Z"},{"label":"Essais Libres 3","type":"fp","utc":"2026-11-07T15:30:00Z"},{"label":"Qualifications","type":"q","utc":"2026-11-07T19:00:00Z"},{"label":"Course","type":"race","utc":"2026-11-08T17:00:00Z"}]},{"round":20,"name":"Grand Prix de Las Vegas","short":"Las Vegas","circuit":"Las Vegas Strip Circuit","city":"Las Vegas","flag":"🇺🇸","dates":"19–21 novembre","sprint":false,"cancelled":false,"note":"Sessions nocturnes","sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-11-20T04:00:00Z"},{"label":"Essais Libres 2","type":"fp","utc":"2026-11-20T08:00:00Z"},{"label":"Qualifications","type":"q","utc":"2026-11-21T06:00:00Z"},{"label":"Course","type":"race","utc":"2026-11-22T06:00:00Z"}]},{"round":21,"name":"Grand Prix du Qatar","short":"Qatar","circuit":"Lusail International Circuit","city":"Lusail","flag":"🇶🇦","dates":"27–29 novembre","sprint":false,"cancelled":false,"sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-11-27T13:00:00Z"},{"label":"Essais Libres 2","type":"fp","utc":"2026-11-27T17:00:00Z"},{"label":"Essais Libres 3","type":"fp","utc":"2026-11-28T12:30:00Z"},{"label":"Qualifications","type":"q","utc":"2026-11-28T16:00:00Z"},{"label":"Course","type":"race","utc":"2026-11-29T15:00:00Z"}]},{"round":22,"name":"Grand Prix d'Abu Dhabi","short":"Abu Dhabi","circuit":"Yas Marina Circuit","city":"Yas Marina","flag":"🇦🇪","dates":"4–6 décembre","sprint":false,"cancelled":false,"sessions":[{"label":"Essais Libres 1","type":"fp","utc":"2026-12-04T09:30:00Z"},{"label":"Essais Libres 2","type":"fp","utc":"2026-12-04T13:00:00Z"},{"label":"Essais Libres 3","type":"fp","utc":"2026-12-05T09:30:00Z"},{"label":"Qualifications","type":"q","utc":"2026-12-05T13:00:00Z"},{"label":"Course","type":"race","utc":"2026-12-06T13:00:00Z"}]}],"wrc":[{"round":1,"name":"Rallye Monte-Carlo","short":"Monte-Carlo","flag":"🇲🇨","hq":"Gap, France","surface":"mixed","dates":"22–25 janv.","status":"past","stages":[{"id":"SD","name":"Shakedown - Gap","dist":"4.25 km","utc":"2026-01-21T13:00:00Z","dur":30},{"id":"SS1","name":"Toudon / Saint-Antonin","dist":"21.9 km","utc":"2026-01-22T15:05:00Z","dur":30},{"id":"SS2","name":"Esclangon / Seyne-les-Alpes","dist":"23.8 km","utc":"2026-01-22T17:35:00Z","dur":33},{"id":"SS3","name":"Vaumeilh / Claret 1","dist":"15.1 km","utc":"2026-01-22T19:35:00Z","dur":22},{"id":"SS4","name":"Laborel / Chauvac 1","dist":"17.95 km","utc":"2026-01-23T08:04:00Z","dur":26},{"id":"SS5","name":"Sisteron / Thoard 1","dist":"22.7 km","utc":"2026-01-23T09:32:00Z","dur":30},{"id":"SS6","name":"Bras d'Asse / Mézel 1","dist":"21.5 km","utc":"2026-01-23T11:05:00Z","dur":29},{"id":"SS7","name":"Laborel / Chauvac 2","dist":"17.95 km","utc":"2026-01-23T14:35:00Z","dur":26},{"id":"SS8","name":"Sisteron / Thoard 2","dist":"22.7 km","utc":"2026-01-23T16:03:00Z","dur":30},{"id":"SS9","name":"Bras d'Asse / Mézel 2","dist":"17.79 km","utc":"2026-01-23T17:30:00Z","dur":26},{"id":"SS10","name":"La Bréole / Bellaffaires 1","dist":"29.93 km","utc":"2026-01-24T07:31:00Z","dur":38},{"id":"SS11","name":"Vaumeilh / Claret 2","dist":"15.05 km","utc":"2026-01-24T08:55:00Z","dur":22},{"id":"SS12","name":"La Bréole / Bellaffaires 2","dist":"29.93 km","utc":"2026-01-24T11:31:00Z","dur":38},{"id":"SS13","name":"Monaco Circuit - SSS","dist":"2.69 km","utc":"2026-01-24T17:35:00Z","dur":15},{"id":"SS14","name":"Col de Braus / La Cabanette 1","dist":"12.5 km","utc":"2026-01-25T07:05:00Z","dur":20},{"id":"SS15","name":"La Bollène-Vésubie / Moulinet 1","dist":"23.45 km","utc":"2026-01-25T08:35:00Z","dur":32},{"id":"SS16","name":"Col de Braus / La Cabanette 2","dist":"12.5 km","utc":"2026-01-25T10:09:00Z","dur":20},{"id":"SS17","name":"La Bollène-Vésubie (Power Stage)","dist":"23.45 km","utc":"2026-01-25T12:15:00Z","dur":32}]},{"round":2,"name":"Rally Sweden","short":"Suède","flag":"🇸🇪","hq":"Umeå, Sweden","surface":"snow","dates":"12–15 fév.","status":"past","stages":[{"id":"SD","name":"Shakedown - Umeå City","dist":"3.44 km","utc":"2026-02-12T13:01:00Z","dur":25},{"id":"SS1","name":"Umeå 1","dist":"10.23 km","utc":"2026-02-12T18:05:00Z","dur":18},{"id":"SS2","name":"Bygdsiljum 1","dist":"27.55 km","utc":"2026-02-13T09:07:00Z","dur":35},{"id":"SS3","name":"Andersvattnet 1","dist":"20.51 km","utc":"2026-02-13T10:08:00Z","dur":28},{"id":"SS4","name":"Bäck 1","dist":"11.53 km","utc":"2026-02-13T11:16:00Z","dur":18},{"id":"SS5","name":"Bygdsiljum 2","dist":"27.55 km","utc":"2026-02-13T14:40:00Z","dur":35},{"id":"SS6","name":"Andersvattnet 2","dist":"20.51 km","utc":"2026-02-13T15:41:00Z","dur":28},{"id":"SS7","name":"Bäck 2","dist":"11.53 km","utc":"2026-02-13T16:49:00Z","dur":18},{"id":"SS8","name":"Lögdeälven 1","dist":"24.72 km","utc":"2026-02-14T08:00:00Z","dur":32},{"id":"SS9","name":"Håkmark 1","dist":"19.22 km","utc":"2026-02-14T09:30:00Z","dur":27},{"id":"SS10","name":"Umeå 2","dist":"10.23 km","utc":"2026-02-14T11:00:00Z","dur":18},{"id":"SS11","name":"Lögdeälven 2","dist":"24.72 km","utc":"2026-02-14T14:00:00Z","dur":32},{"id":"SS12","name":"Håkmark 2","dist":"19.22 km","utc":"2026-02-14T15:30:00Z","dur":27},{"id":"SS13","name":"Umeå 3","dist":"10.23 km","utc":"2026-02-14T17:00:00Z","dur":18},{"id":"SS14","name":"Åmråfors 1","dist":"23.19 km","utc":"2026-02-15T08:00:00Z","dur":30},{"id":"SS15","name":"Åmråfors 2","dist":"23.19 km","utc":"2026-02-15T10:00:00Z","dur":30},{"id":"SS16","name":"Umeå - Power Stage","dist":"10.23 km","utc":"2026-02-15T12:00:00Z","dur":18}]},{"round":3,"name":"Safari Rally Kenya","short":"Kenya","flag":"🇰🇪","hq":"Naivasha, Kenya","surface":"gravel","dates":"12–15 mars","status":"past","stages":[{"id":"SD","name":"Shakedown - Loldia","dist":"6.31 km","utc":"2026-03-12T05:00:00Z","dur":30},{"id":"SS1","name":"Camp Moran 1","dist":"24.35 km","utc":"2026-03-12T12:00:00Z","dur":35},{"id":"SS2","name":"Mzabibu 1","dist":"8.86 km","utc":"2026-03-12T13:30:00Z","dur":15},{"id":"SS3","name":"Loldia 1","dist":"25.6 km","utc":"2026-03-13T05:00:00Z","dur":36},{"id":"SS4","name":"Kengen Geothermal 1","dist":"22.4 km","utc":"2026-03-13T06:30:00Z","dur":32},{"id":"SS5","name":"Kedong 1","dist":"13.79 km","utc":"2026-03-13T08:00:00Z","dur":22},{"id":"SS6","name":"Camp Moran 2","dist":"24.35 km","utc":"2026-03-13T10:00:00Z","dur":35},{"id":"SS7","name":"Loldia 2","dist":"18.95 km","utc":"2026-03-13T11:30:00Z","dur":28},{"id":"SS8","name":"Kengen Geothermal 2","dist":"22.4 km","utc":"2026-03-13T13:00:00Z","dur":32},{"id":"SS9","name":"Kedong 2","dist":"13.79 km","utc":"2026-03-13T14:30:00Z","dur":22},{"id":"SS10","name":"Mzabibu 2","dist":"8.86 km","utc":"2026-03-13T16:00:00Z","dur":15},{"id":"SS11","name":"Soysambu 1","dist":"25.2 km","utc":"2026-03-14T05:35:00Z","dur":36},{"id":"SS12","name":"Elementaita 1","dist":"17.8 km","utc":"2026-03-14T06:35:00Z","dur":26},{"id":"SS13","name":"Sleeping Warrior 1","dist":"18.41 km","utc":"2026-03-14T08:00:00Z","dur":28},{"id":"SS14","name":"Soysambu 2","dist":"25.2 km","utc":"2026-03-14T11:00:00Z","dur":36},{"id":"SS15","name":"Elementaita 2","dist":"17.8 km","utc":"2026-03-14T12:00:00Z","dur":26},{"id":"SS16","name":"Sleeping Warrior 2","dist":"13.89 km","utc":"2026-03-14T13:30:00Z","dur":22},{"id":"SS17","name":"Oserengoni 1","dist":"21.3 km","utc":"2026-03-15T05:00:00Z","dur":30},{"id":"SS18","name":"Hell's Gate 1","dist":"14.2 km","utc":"2026-03-15T06:30:00Z","dur":22},{"id":"SS19","name":"Oserengoni 2","dist":"21.3 km","utc":"2026-03-15T09:00:00Z","dur":30},{"id":"SS20","name":"Hell's Gate - Power Stage","dist":"14.2 km","utc":"2026-03-15T10:15:00Z","dur":22}]},{"round":4,"name":"Croatia Rally","short":"Croatie","flag":"🇭🇷","hq":"Rijeka, Croatia","surface":"tarmac","dates":"9–12 avr.","status":"past","stages":[{"id":"SD","name":"Shakedown - Automotodrom Grobnik","dist":"3.44 km","utc":"2026-04-09T08:01:00Z","dur":25},{"id":"SS1","name":"Vodice - Brest 1","dist":"14.12 km","utc":"2026-04-09T19:00:00Z","dur":22},{"id":"SS2","name":"Lake Butoniga - Motovun 1","dist":"13.78 km","utc":"2026-04-09T19:58:00Z","dur":20},{"id":"SS3","name":"Beram - Cerovlje 1","dist":"23.78 km","utc":"2026-04-09T21:01:00Z","dur":32},{"id":"SS4","name":"Učka 1","dist":"11.75 km","utc":"2026-04-09T21:49:00Z","dur":18},{"id":"SS5","name":"Vodice - Brest 2","dist":"14.12 km","utc":"2026-04-10T07:13:00Z","dur":22},{"id":"SS6","name":"Lake Butoniga - Motovun 2","dist":"13.78 km","utc":"2026-04-10T08:11:00Z","dur":20},{"id":"SS7","name":"Beram - Cerovlje 2","dist":"23.78 km","utc":"2026-04-10T09:14:00Z","dur":32},{"id":"SS8","name":"Učka 2","dist":"11.75 km","utc":"2026-04-10T10:02:00Z","dur":18},{"id":"SS9","name":"Platak 1","dist":"16.26 km","utc":"2026-04-10T13:15:00Z","dur":24},{"id":"SS10","name":"Ravna Gora - Skrad 1","dist":"10.13 km","utc":"2026-04-10T14:13:00Z","dur":16},{"id":"SS11","name":"Generalski Stol - Zdihovo 1","dist":"22.48 km","utc":"2026-04-10T15:37:00Z","dur":30},{"id":"SS12","name":"Pećurkovo Brdo 1","dist":"9.11 km","utc":"2026-04-10T16:35:00Z","dur":14},{"id":"SS13","name":"Pećurkovo Brdo 2","dist":"9.11 km","utc":"2026-04-11T06:43:00Z","dur":14},{"id":"SS14","name":"Generalski Stol - Zdihovo 2","dist":"22.48 km","utc":"2026-04-11T07:36:00Z","dur":30},{"id":"SS15","name":"Ravna Gora - Skrad 2","dist":"10.13 km","utc":"2026-04-11T08:54:00Z","dur":16},{"id":"SS16","name":"Platak 2","dist":"16.26 km","utc":"2026-04-11T09:53:00Z","dur":24},{"id":"SS17","name":"Krk - Baška 1","dist":"12.2 km","utc":"2026-04-11T13:05:00Z","dur":20},{"id":"SS18","name":"Krk - Baška 2","dist":"12.2 km","utc":"2026-04-11T14:05:00Z","dur":20},{"id":"SS19","name":"Opatija - Rijeka 1","dist":"8.4 km","utc":"2026-04-12T07:00:00Z","dur":14},{"id":"SS20","name":"Opatija - Rijeka 2 (PS)","dist":"8.4 km","utc":"2026-04-12T08:05:00Z","dur":14}]},{"round":5,"name":"Rally Islas Canarias","short":"Îles Canaries","flag":"🇪🇸","hq":"Las Palmas, Gran Canaria","surface":"tarmac","dates":"23–26 avr.","status":"past","stages":[{"id":"SD","name":"Shakedown - Las Palmas","dist":"3.2 km","utc":"2026-04-23T07:00:00Z","dur":20},{"id":"SS1","name":"Las Palmas SSS 1","dist":"2.8 km","utc":"2026-04-23T16:00:00Z","dur":15},{"id":"SS2","name":"Las Palmas SSS 2","dist":"2.8 km","utc":"2026-04-23T17:00:00Z","dur":15},{"id":"SS3","name":"Arucas - Firgas 1","dist":"18.5 km","utc":"2026-04-24T07:00:00Z","dur":28},{"id":"SS4","name":"Moya 1","dist":"15.2 km","utc":"2026-04-24T08:30:00Z","dur":24},{"id":"SS5","name":"Teror 1","dist":"22.1 km","utc":"2026-04-24T10:00:00Z","dur":32},{"id":"SS6","name":"Arucas - Firgas 2","dist":"18.5 km","utc":"2026-04-24T13:00:00Z","dur":28},{"id":"SS7","name":"Moya 2","dist":"15.2 km","utc":"2026-04-24T14:30:00Z","dur":24},{"id":"SS8","name":"Teror 2","dist":"22.1 km","utc":"2026-04-24T16:00:00Z","dur":32},{"id":"SS9","name":"El Rincón 1","dist":"24.6 km","utc":"2026-04-25T07:00:00Z","dur":35},{"id":"SS10","name":"Ayacata 1","dist":"19.8 km","utc":"2026-04-25T08:30:00Z","dur":28},{"id":"SS11","name":"Tunte 1","dist":"16.3 km","utc":"2026-04-25T10:00:00Z","dur":24},{"id":"SS12","name":"El Rincón 2","dist":"24.6 km","utc":"2026-04-25T13:00:00Z","dur":35},{"id":"SS13","name":"Ayacata 2","dist":"19.8 km","utc":"2026-04-25T14:30:00Z","dur":28},{"id":"SS14","name":"Tunte - Power Stage","dist":"16.3 km","utc":"2026-04-25T16:00:00Z","dur":24}]},{"round":6,"name":"Rally de Portugal","short":"Portugal","flag":"🇵🇹","hq":"Matosinhos, Porto","surface":"gravel","dates":"7–10 mai","stages":[{"id":"SD","name":"Shakedown - Baltar","dist":"5.72 km","utc":"2026-05-06T08:00:00Z","dur":30},{"id":"SS1","name":"Águeda / Sever","dist":"15.1 km","utc":"2026-05-07T14:05:00Z","dur":22},{"id":"SS2","name":"Sever / Albergaria","dist":"20.2 km","utc":"2026-05-07T15:05:00Z","dur":30},{"id":"SS3","name":"Figueira da Foz SSS","dist":"2.10 km","utc":"2026-05-07T17:05:00Z","dur":12},{"id":"SS4","name":"Mortágua 1","dist":"14.6 km","utc":"2026-05-08T06:35:00Z","dur":22},{"id":"SS5","name":"Arganil 1","dist":"19.0 km","utc":"2026-05-08T07:55:00Z","dur":28},{"id":"SS6","name":"Lousã 1","dist":"7.07 km","utc":"2026-05-08T09:13:00Z","dur":14},{"id":"SS7","name":"Arganil 2","dist":"19.0 km","utc":"2026-05-08T11:25:00Z","dur":28},{"id":"SS8","name":"Góis","dist":"15.5 km","utc":"2026-05-08T12:20:00Z","dur":24},{"id":"SS9","name":"Lousã 2","dist":"7.07 km","utc":"2026-05-08T13:03:00Z","dur":14},{"id":"SS10","name":"Mortágua 2","dist":"14.6 km","utc":"2026-05-08T14:40:00Z","dur":22},{"id":"SS11","name":"Felgueiras 1","dist":"8.81 km","utc":"2026-05-09T06:05:00Z","dur":14},{"id":"SS12","name":"Cabeceiras de Basto 1","dist":"19.9 km","utc":"2026-05-09T07:05:00Z","dur":28},{"id":"SS13","name":"Amarante 1","dist":"25.9 km","utc":"2026-05-09T08:35:00Z","dur":36},{"id":"SS14","name":"Paredes 1","dist":"16.1 km","utc":"2026-05-09T10:05:00Z","dur":24},{"id":"SS15","name":"Felgueiras 2","dist":"8.81 km","utc":"2026-05-09T13:05:00Z","dur":14},{"id":"SS16","name":"Cabeceiras de Basto 2","dist":"19.9 km","utc":"2026-05-09T14:05:00Z","dur":28},{"id":"SS17","name":"Amarante 2","dist":"25.9 km","utc":"2026-05-09T15:35:00Z","dur":36},{"id":"SS18","name":"Paredes 2","dist":"16.1 km","utc":"2026-05-09T17:05:00Z","dur":24},{"id":"SS19","name":"Lousada SSS","dist":"3.52 km","utc":"2026-05-09T18:05:00Z","dur":12},{"id":"SS20","name":"Vieira do Minho 1","dist":"21.7 km","utc":"2026-05-10T07:05:00Z","dur":30},{"id":"SS21","name":"Fafe 1","dist":"11.2 km","utc":"2026-05-10T08:35:00Z","dur":18},{"id":"SS22","name":"Vieira do Minho 2","dist":"21.7 km","utc":"2026-05-10T09:35:00Z","dur":30},{"id":"SS23","name":"Fafe - Wolf Power Stage","dist":"11.2 km","utc":"2026-05-10T12:15:00Z","dur":18}]},{"round":7,"name":"Rally Japan","short":"Japon","flag":"🇯🇵","hq":"Toyota, Aichi","surface":"tarmac","dates":"28–31 mai","stages":[{"id":"SD","name":"Shakedown - Kuragaike Park","dist":"~4 km","utc":"2026-05-27T23:00:00Z","dur":30},{"id":"SS1","name":"Asuke 1","dist":"~14 km","utc":"2026-05-28T23:00:00Z","dur":22},{"id":"SS2","name":"Isegami's Tunnel 1","dist":"~16 km","utc":"2026-05-29T00:30:00Z","dur":24},{"id":"SS3","name":"Inabu / Shitara 1","dist":"~22 km","utc":"2026-05-29T02:00:00Z","dur":30},{"id":"SS4","name":"Asuke 2","dist":"~14 km","utc":"2026-05-29T04:00:00Z","dur":22},{"id":"SS5","name":"Isegami's Tunnel 2","dist":"~16 km","utc":"2026-05-29T05:30:00Z","dur":24},{"id":"SS6","name":"Inabu / Shitara 2","dist":"~22 km","utc":"2026-05-29T07:00:00Z","dur":30},{"id":"SS7","name":"Obara 1","dist":"~18 km","utc":"2026-05-29T23:00:00Z","dur":26},{"id":"SS8","name":"Ena 1","dist":"~20 km","utc":"2026-05-30T00:30:00Z","dur":28},{"id":"SS9","name":"Mt. Kasagi 1","dist":"~24 km","utc":"2026-05-30T02:00:00Z","dur":32},{"id":"SS10","name":"Fujioka SSS 1","dist":"~3 km","utc":"2026-05-30T04:00:00Z","dur":12},{"id":"SS11","name":"Obara 2","dist":"~18 km","utc":"2026-05-30T06:00:00Z","dur":26},{"id":"SS12","name":"Ena 2","dist":"~20 km","utc":"2026-05-30T07:30:00Z","dur":28},{"id":"SS13","name":"Mt. Kasagi 2","dist":"~24 km","utc":"2026-05-30T09:00:00Z","dur":32},{"id":"SS14","name":"Fujioka SSS 2","dist":"~3 km","utc":"2026-05-30T11:00:00Z","dur":12},{"id":"SS15","name":"Nukata (Okazaki)","dist":"~16 km","utc":"2026-05-30T23:00:00Z","dur":24},{"id":"SS16","name":"Kuragaike Park Reverse","dist":"~12 km","utc":"2026-05-31T00:30:00Z","dur":18},{"id":"SS17","name":"Lake Mikawako - Power Stage","dist":"~14 km","utc":"2026-05-31T02:00:00Z","dur":22}]},{"round":8,"name":"Acropolis Rally Greece","short":"Grèce","flag":"🇬🇷","hq":"Loutraki, Corinthia","surface":"gravel","dates":"25–28 juin","stages":[{"id":"SD","name":"Shakedown - Loutraki","dist":"~5 km","utc":"2026-06-25T07:00:00Z","dur":25},{"id":"SS1","name":"Pyrgos 1","dist":"~16 km","utc":"2026-06-25T14:00:00Z","dur":24},{"id":"SS2","name":"Elatia 1","dist":"~24 km","utc":"2026-06-26T04:00:00Z","dur":32},{"id":"SS3","name":"Delphi 1","dist":"~18 km","utc":"2026-06-26T05:30:00Z","dur":26},{"id":"SS4","name":"Amfissa 1","dist":"~21 km","utc":"2026-06-26T07:00:00Z","dur":30},{"id":"SS5","name":"Pyrgos 2","dist":"~16 km","utc":"2026-06-26T09:00:00Z","dur":24},{"id":"SS6","name":"Elatia 2","dist":"~24 km","utc":"2026-06-26T11:00:00Z","dur":32},{"id":"SS7","name":"Delphi 2","dist":"~18 km","utc":"2026-06-26T12:30:00Z","dur":26},{"id":"SS8","name":"Amfissa 2","dist":"~21 km","utc":"2026-06-26T14:00:00Z","dur":30},{"id":"SS9","name":"Iti 1","dist":"~26 km","utc":"2026-06-27T04:00:00Z","dur":36},{"id":"SS10","name":"Pavliani 1","dist":"~18 km","utc":"2026-06-27T05:30:00Z","dur":26},{"id":"SS11","name":"Gravia 1","dist":"~20 km","utc":"2026-06-27T07:00:00Z","dur":28},{"id":"SS12","name":"Iti 2","dist":"~26 km","utc":"2026-06-27T09:00:00Z","dur":36},{"id":"SS13","name":"Pavliani 2","dist":"~18 km","utc":"2026-06-27T10:30:00Z","dur":26},{"id":"SS14","name":"Gravia 2","dist":"~20 km","utc":"2026-06-27T12:00:00Z","dur":28},{"id":"SS15","name":"Karoutes 1","dist":"~14 km","utc":"2026-06-28T04:00:00Z","dur":22},{"id":"SS16","name":"Thiva 1","dist":"~19 km","utc":"2026-06-28T05:30:00Z","dur":28},{"id":"SS17","name":"Karoutes 2","dist":"~14 km","utc":"2026-06-28T07:00:00Z","dur":22},{"id":"SS18","name":"Thiva - Power Stage","dist":"~19 km","utc":"2026-06-28T08:30:00Z","dur":28}]},{"round":9,"name":"Rally Estonia","short":"Estonie","flag":"🇪🇪","hq":"Tartu, Estonia","surface":"gravel","dates":"16–19 juil.","stages":[{"id":"SD","name":"Shakedown - Tartu","dist":"~5 km","utc":"2026-07-16T07:00:00Z","dur":25},{"id":"SS1","name":"Otepää 1","dist":"~20 km","utc":"2026-07-16T14:00:00Z","dur":28},{"id":"SS2","name":"Kanepi 1","dist":"~24 km","utc":"2026-07-17T04:00:00Z","dur":32},{"id":"SS3","name":"Elva 1","dist":"~18 km","utc":"2026-07-17T05:30:00Z","dur":26},{"id":"SS4","name":"Vahessaare 1","dist":"~14 km","utc":"2026-07-17T07:00:00Z","dur":22},{"id":"SS5","name":"Otepää 2","dist":"~20 km","utc":"2026-07-17T09:00:00Z","dur":28},{"id":"SS6","name":"Kanepi 2","dist":"~24 km","utc":"2026-07-17T11:00:00Z","dur":32},{"id":"SS7","name":"Elva 2","dist":"~18 km","utc":"2026-07-17T12:30:00Z","dur":26},{"id":"SS8","name":"Vahessaare 2","dist":"~14 km","utc":"2026-07-17T14:00:00Z","dur":22},{"id":"SS9","name":"Tartu SSS 1","dist":"~3 km","utc":"2026-07-17T16:00:00Z","dur":12},{"id":"SS10","name":"Järvselja 1","dist":"~22 km","utc":"2026-07-18T04:00:00Z","dur":30},{"id":"SS11","name":"Võru 1","dist":"~16 km","utc":"2026-07-18T05:30:00Z","dur":24},{"id":"SS12","name":"Raanitsa 1","dist":"~19 km","utc":"2026-07-18T07:00:00Z","dur":28},{"id":"SS13","name":"Järvselja 2","dist":"~22 km","utc":"2026-07-18T09:00:00Z","dur":30},{"id":"SS14","name":"Võru 2","dist":"~16 km","utc":"2026-07-18T10:30:00Z","dur":24},{"id":"SS15","name":"Raanitsa 2","dist":"~19 km","utc":"2026-07-18T12:00:00Z","dur":28},{"id":"SS16","name":"Tartu SSS 2","dist":"~3 km","utc":"2026-07-18T14:00:00Z","dur":12},{"id":"SS17","name":"Kanepi 3","dist":"~24 km","utc":"2026-07-19T04:00:00Z","dur":32},{"id":"SS18","name":"Elva 3","dist":"~18 km","utc":"2026-07-19T05:30:00Z","dur":26},{"id":"SS19","name":"Kanepi - Power Stage","dist":"~24 km","utc":"2026-07-19T07:00:00Z","dur":32}]},{"round":10,"name":"Rally Finland","short":"Finlande","flag":"🇫🇮","hq":"Jyväskylä, Finland","surface":"gravel","dates":"30 juil.–2 août","stages":[{"id":"SD","name":"Shakedown - Killeri","dist":"~5 km","utc":"2026-07-30T07:00:00Z","dur":25},{"id":"SS1","name":"Harju SSS 1","dist":"~3 km","utc":"2026-07-30T14:00:00Z","dur":12},{"id":"SS2","name":"Harju SSS 2","dist":"~3 km","utc":"2026-07-30T15:00:00Z","dur":12},{"id":"SS3","name":"Mökkiperä 1","dist":"~26 km","utc":"2026-07-31T04:00:00Z","dur":32},{"id":"SS4","name":"Laukaa 1","dist":"~22 km","utc":"2026-07-31T05:30:00Z","dur":28},{"id":"SS5","name":"Killeri 1","dist":"~18 km","utc":"2026-07-31T07:00:00Z","dur":24},{"id":"SS6","name":"Mökkiperä 2","dist":"~26 km","utc":"2026-07-31T09:00:00Z","dur":32},{"id":"SS7","name":"Laukaa 2","dist":"~22 km","utc":"2026-07-31T10:30:00Z","dur":28},{"id":"SS8","name":"Killeri 2","dist":"~18 km","utc":"2026-07-31T12:00:00Z","dur":24},{"id":"SS9","name":"Ouninpohja 1","dist":"~32 km","utc":"2026-08-01T04:00:00Z","dur":38},{"id":"SS10","name":"Ruuhimäki 1","dist":"~18 km","utc":"2026-08-01T05:30:00Z","dur":24},{"id":"SS11","name":"Päijälä 1","dist":"~16 km","utc":"2026-08-01T07:00:00Z","dur":22},{"id":"SS12","name":"Ouninpohja 2","dist":"~32 km","utc":"2026-08-01T09:00:00Z","dur":38},{"id":"SS13","name":"Ruuhimäki 2","dist":"~18 km","utc":"2026-08-01T10:30:00Z","dur":24},{"id":"SS14","name":"Päijälä 2","dist":"~16 km","utc":"2026-08-01T12:00:00Z","dur":22},{"id":"SS15","name":"Oittila 1","dist":"~20 km","utc":"2026-08-02T04:00:00Z","dur":28},{"id":"SS16","name":"Laukaa 3","dist":"~22 km","utc":"2026-08-02T05:30:00Z","dur":28},{"id":"SS17","name":"Oittila 2","dist":"~20 km","utc":"2026-08-02T07:00:00Z","dur":28},{"id":"SS18","name":"Laukaa - Power Stage","dist":"~22 km","utc":"2026-08-02T08:30:00Z","dur":28}]},{"round":11,"name":"Rally del Paraguay","short":"Paraguay","flag":"🇵🇾","hq":"Encarnación, Itapúa","surface":"gravel","dates":"27–30 août","stages":[{"id":"SD","name":"Shakedown - Encarnación","dist":"~5 km","utc":"2026-08-27T10:00:00Z","dur":25},{"id":"SS1","name":"Encarnación SSS 1","dist":"~3 km","utc":"2026-08-27T18:00:00Z","dur":12},{"id":"SS2","name":"Encarnación SSS 2","dist":"~3 km","utc":"2026-08-27T19:00:00Z","dur":12},{"id":"SS3","name":"Cambyretá 1","dist":"~24 km","utc":"2026-08-28T10:00:00Z","dur":32},{"id":"SS4","name":"Capitán Miranda 1","dist":"~20 km","utc":"2026-08-28T11:30:00Z","dur":28},{"id":"SS5","name":"San Cosme 1","dist":"~18 km","utc":"2026-08-28T13:00:00Z","dur":26},{"id":"SS6","name":"Cambyretá 2","dist":"~24 km","utc":"2026-08-28T15:00:00Z","dur":32},{"id":"SS7","name":"Capitán Miranda 2","dist":"~20 km","utc":"2026-08-28T16:30:00Z","dur":28},{"id":"SS8","name":"San Cosme 2","dist":"~18 km","utc":"2026-08-28T18:00:00Z","dur":26},{"id":"SS9","name":"Itapúa 1","dist":"~22 km","utc":"2026-08-29T10:00:00Z","dur":30},{"id":"SS10","name":"Trinidad 1","dist":"~19 km","utc":"2026-08-29T11:30:00Z","dur":28},{"id":"SS11","name":"Jesús 1","dist":"~16 km","utc":"2026-08-29T13:00:00Z","dur":24},{"id":"SS12","name":"Itapúa 2","dist":"~22 km","utc":"2026-08-29T15:00:00Z","dur":30},{"id":"SS13","name":"Trinidad 2","dist":"~19 km","utc":"2026-08-29T16:30:00Z","dur":28},{"id":"SS14","name":"Jesús 2","dist":"~16 km","utc":"2026-08-29T18:00:00Z","dur":24},{"id":"SS15","name":"Alto Paraná 1","dist":"~21 km","utc":"2026-08-30T10:00:00Z","dur":30},{"id":"SS16","name":"Encarnación 2","dist":"~18 km","utc":"2026-08-30T11:30:00Z","dur":26},{"id":"SS17","name":"Alto Paraná - Power Stage","dist":"~21 km","utc":"2026-08-30T13:00:00Z","dur":30}]},{"round":12,"name":"Rally Chile","short":"Chili","flag":"🇨🇱","hq":"Concepción, Biobío","surface":"gravel","dates":"10–13 sept.","stages":[{"id":"SD","name":"Shakedown - Concepción","dist":"~5 km","utc":"2026-09-10T12:00:00Z","dur":25},{"id":"SS1","name":"Concepción SSS","dist":"~3 km","utc":"2026-09-10T19:00:00Z","dur":12},{"id":"SS2","name":"Biobío 1","dist":"~22 km","utc":"2026-09-11T11:00:00Z","dur":30},{"id":"SS3","name":"Arauco 1","dist":"~26 km","utc":"2026-09-11T12:30:00Z","dur":35},{"id":"SS4","name":"Yumbel 1","dist":"~18 km","utc":"2026-09-11T14:00:00Z","dur":26},{"id":"SS5","name":"Biobío 2","dist":"~22 km","utc":"2026-09-11T16:00:00Z","dur":30},{"id":"SS6","name":"Arauco 2","dist":"~26 km","utc":"2026-09-11T17:30:00Z","dur":35},{"id":"SS7","name":"Yumbel 2","dist":"~18 km","utc":"2026-09-11T19:00:00Z","dur":26},{"id":"SS8","name":"Santa Juana 1","dist":"~20 km","utc":"2026-09-12T11:00:00Z","dur":28},{"id":"SS9","name":"Nacimiento 1","dist":"~18 km","utc":"2026-09-12T12:30:00Z","dur":26},{"id":"SS10","name":"Mulchén 1","dist":"~24 km","utc":"2026-09-12T14:00:00Z","dur":32},{"id":"SS11","name":"Santa Juana 2","dist":"~20 km","utc":"2026-09-12T16:00:00Z","dur":28},{"id":"SS12","name":"Nacimiento 2","dist":"~18 km","utc":"2026-09-12T17:30:00Z","dur":26},{"id":"SS13","name":"Mulchén 2","dist":"~24 km","utc":"2026-09-12T19:00:00Z","dur":32},{"id":"SS14","name":"Lago Lanalhue 1","dist":"~22 km","utc":"2026-09-13T11:00:00Z","dur":30},{"id":"SS15","name":"Cañete 1","dist":"~16 km","utc":"2026-09-13T12:30:00Z","dur":24},{"id":"SS16","name":"Lago Lanalhue 2","dist":"~22 km","utc":"2026-09-13T14:00:00Z","dur":30},{"id":"SS17","name":"Cañete - Power Stage","dist":"~16 km","utc":"2026-09-13T15:30:00Z","dur":24}]},{"round":13,"name":"Rally Italia Sardegna","short":"Sardaigne","flag":"🇮🇹","hq":"Alghero, Sardinia","surface":"gravel","dates":"1–4 oct.","stages":[{"id":"SD","name":"Shakedown - Alghero","dist":"~5 km","utc":"2026-10-01T07:00:00Z","dur":25},{"id":"SS1","name":"Terranova 1","dist":"~20 km","utc":"2026-10-01T14:00:00Z","dur":28},{"id":"SS2","name":"Monti di Ala' 1","dist":"~24 km","utc":"2026-10-02T05:00:00Z","dur":32},{"id":"SS3","name":"Sassari - Argentiera 1","dist":"~18 km","utc":"2026-10-02T06:30:00Z","dur":26},{"id":"SS4","name":"Tula 1","dist":"~16 km","utc":"2026-10-02T08:00:00Z","dur":24},{"id":"SS5","name":"Monti di Ala' 2","dist":"~24 km","utc":"2026-10-02T10:00:00Z","dur":32},{"id":"SS6","name":"Sassari - Argentiera 2","dist":"~18 km","utc":"2026-10-02T11:30:00Z","dur":26},{"id":"SS7","name":"Tula 2","dist":"~16 km","utc":"2026-10-02T13:00:00Z","dur":24},{"id":"SS8","name":"Monte Lerno 1","dist":"~26 km","utc":"2026-10-03T05:00:00Z","dur":35},{"id":"SS9","name":"Micky's Jump 1","dist":"~14 km","utc":"2026-10-03T06:30:00Z","dur":22},{"id":"SS10","name":"Cala Flumini 1","dist":"~18 km","utc":"2026-10-03T08:00:00Z","dur":26},{"id":"SS11","name":"Monte Lerno 2","dist":"~26 km","utc":"2026-10-03T10:00:00Z","dur":35},{"id":"SS12","name":"Micky's Jump 2","dist":"~14 km","utc":"2026-10-03T11:30:00Z","dur":22},{"id":"SS13","name":"Cala Flumini 2","dist":"~18 km","utc":"2026-10-03T13:00:00Z","dur":26},{"id":"SS14","name":"Coiluna - Loelle 1","dist":"~22 km","utc":"2026-10-04T05:00:00Z","dur":30},{"id":"SS15","name":"Sassari - Argentiera 3","dist":"~18 km","utc":"2026-10-04T06:30:00Z","dur":26},{"id":"SS16","name":"Coiluna - Loelle 2","dist":"~22 km","utc":"2026-10-04T08:00:00Z","dur":30},{"id":"SS17","name":"Micky's Jump - Power","dist":"~14 km","utc":"2026-10-04T09:30:00Z","dur":22}]},{"round":14,"name":"Rally Saudi Arabia","short":"Arabie Saoudite","flag":"🇸🇦","hq":"Jeddah, Mecca Province","surface":"gravel","dates":"12–15 nov.","stages":[{"id":"SD","name":"Shakedown - Jeddah","dist":"~5 km","utc":"2026-11-12T05:00:00Z","dur":25},{"id":"SS1","name":"Jeddah Corniche SSS 1","dist":"~4 km","utc":"2026-11-12T14:00:00Z","dur":15},{"id":"SS2","name":"Jeddah Corniche SSS 2","dist":"~4 km","utc":"2026-11-12T15:00:00Z","dur":15},{"id":"SS3","name":"Al Hada 1","dist":"~22 km","utc":"2026-11-13T04:00:00Z","dur":30},{"id":"SS4","name":"Taif 1","dist":"~26 km","utc":"2026-11-13T05:30:00Z","dur":35},{"id":"SS5","name":"Wadi Qanunah 1","dist":"~20 km","utc":"2026-11-13T07:00:00Z","dur":28},{"id":"SS6","name":"Al Hada 2","dist":"~22 km","utc":"2026-11-13T09:00:00Z","dur":30},{"id":"SS7","name":"Taif 2","dist":"~26 km","utc":"2026-11-13T10:30:00Z","dur":35},{"id":"SS8","name":"Wadi Qanunah 2","dist":"~20 km","utc":"2026-11-13T12:00:00Z","dur":28},{"id":"SS9","name":"Wadi Hanifah 1","dist":"~20 km","utc":"2026-11-14T04:00:00Z","dur":28},{"id":"SS10","name":"Al Thumamah 1","dist":"~18 km","utc":"2026-11-14T05:30:00Z","dur":26},{"id":"SS11","name":"Diriyah 1","dist":"~14 km","utc":"2026-11-14T07:00:00Z","dur":22},{"id":"SS12","name":"Wadi Hanifah 2","dist":"~20 km","utc":"2026-11-14T09:00:00Z","dur":28},{"id":"SS13","name":"Al Thumamah 2","dist":"~18 km","utc":"2026-11-14T10:30:00Z","dur":26},{"id":"SS14","name":"Diriyah 2","dist":"~14 km","utc":"2026-11-14T12:00:00Z","dur":22},{"id":"SS15","name":"Al Ula 1","dist":"~18 km","utc":"2026-11-15T05:00:00Z","dur":26},{"id":"SS16","name":"Al Khashm 1","dist":"~22 km","utc":"2026-11-15T06:30:00Z","dur":30},{"id":"SS17","name":"Al Ula - Power Stage","dist":"~18 km","utc":"2026-11-15T08:00:00Z","dur":26}]}]};
+
+async function loadData(bust = false) {
+  // Load fallback immediately — app displays instantly
+  RACES       = adaptF1(FALLBACK_DATA.f1  || []);
+  WRC_RALLIES = adaptWrc(FALLBACK_DATA.wrc || []);
+  document.getElementById('data-version').textContent = 'Données embarquées';
+
+  // Then silently try to fetch fresher data
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
+    const r = await fetch('data.json', {
+      cache: bust ? 'no-cache' : 'default',
+      signal: controller.signal
+    });
+    clearTimeout(timeout);
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const data = await r.json();
+    RACES       = adaptF1(data.f1  || []);
+    WRC_RALLIES = adaptWrc(data.wrc || []);
+    document.getElementById('data-version').textContent =
+      'Données du ' + (data.version ? new Date(data.version).toLocaleDateString('fr-FR') : '—');
+    renderRaces(); renderWrcRallies(); updateHero(); updateWrcHero();
+  } catch(e) {
+    console.info('data.json non dispo, fallback utilisé:', e.message);
+  }
+}
+
+
+const SURFACE_LABELS = { tarmac:'Asphalte', gravel:'Graviers', snow:'Neige', mixed:'Mixte' };
+const SURFACE_CLASS  = { tarmac:'surface-tarmac', gravel:'surface-gravel', snow:'surface-snow', mixed:'surface-mixed' };
+
+// ── WRC helpers ───────────────────────────────────────────────────────────────
+function ssEndUtc(ss) { return ss.utc + (ss.dur || 25) * 60000; }
+
+function getSsStatus(ss, now) {
+  if (now < ss.utc) return 'upcoming';
+  if (now < ssEndUtc(ss)) return 'live';
+  return 'past';
+}
+
+function wrcRallyStatus(rally, now) {
+  if (!rally.stages.length) return 'upcoming';
+  const first = rally.stages[0].utc;
+  const last  = ssEndUtc(rally.stages[rally.stages.length - 1]);
+  if (now > last)  return 'past';
+  if (now >= first) return 'live';
+  return 'upcoming';
+}
+
+function findNextWrcRally(now) {
+  return WRC_RALLIES.find(r => ssEndUtc(r.stages[r.stages.length - 1]) > now) || null;
+}
+
+function findNextWrcSs(now) {
+  for (const rally of WRC_RALLIES) {
+    for (const ss of rally.stages) {
+      if (ssEndUtc(ss) > now) return { ss, rally };
+    }
+  }
+  return null;
+}
+
+function findCurrentLiveSs(now) {
+  for (const rally of WRC_RALLIES) {
+    for (const ss of rally.stages) {
+      if (now >= ss.utc && now < ssEndUtc(ss)) return { ss, rally };
+    }
+  }
+  return null;
+}
+
+// ── WRC Hero countdown ────────────────────────────────────────────────────────
+function updateWrcHero() {
+  const now = Date.now();
+  const nextRally = findNextWrcRally(now);
+  const nextSsObj = findNextWrcSs(now);
+  const liveSsObj = findCurrentLiveSs(now);
+
+  if (!nextRally) return;
+
+  const rallyStatus = wrcRallyStatus(nextRally, now);
+  const lastSs = nextRally.stages[nextRally.stages.length - 1];
+
+  // Hero info
+  document.getElementById('wrc-hero-name').textContent = nextRally.name;
+  document.getElementById('wrc-hero-flag').textContent = nextRally.flag;
+  document.getElementById('wrc-hero-loc').textContent  = nextRally.hq;
+  document.getElementById('wrc-hero-dates').textContent = '· ' + nextRally.dates;
+
+  // Main card — countdown to rally start or "En cours"
+  const mainCard = document.getElementById('wrc-main-card');
+  const firstSs  = nextRally.stages[0];
+  let mainMs, mainLabel, mainDateLine;
+
+  if (rallyStatus === 'live') {
+    mainMs = ssEndUtc(lastSs) - now;
+    mainLabel = '🔴 Rallye en cours — fin dans';
+    mainDateLine = 'Se termine le ' + utcToLocalDisplay(ssEndUtc(lastSs));
+    mainCard.className = 'countdown-card wrc-live';
+  } else {
+    mainMs = firstSs.utc - now;
+    mainLabel = 'Début du Rallye — ' + nextRally.short;
+    mainDateLine = utcToLocalDisplay(firstSs.utc);
+    mainCard.className = 'countdown-card wrc-main';
+  }
+  document.getElementById('wrc-main-title').textContent = mainLabel;
+  document.getElementById('wrc-main-dateline').textContent = mainDateLine;
+  const mc = diffToComponents(mainMs);
+  document.getElementById('wrc-cd-days').textContent  = pad(mc.days);
+  document.getElementById('wrc-cd-hours').textContent = pad(mc.hours);
+  document.getElementById('wrc-cd-mins').textContent  = pad(mc.mins);
+  document.getElementById('wrc-cd-secs').textContent  = pad(mc.secs);
+
+  // Session card — next SS
+  const sessCard = document.getElementById('wrc-sess-card');
+  if (nextSsObj) {
+    const ss = nextSsObj.ss;
+    const ssStatus = getSsStatus(ss, now);
+    let sessMs, sessLabel, sessDateLine;
+    if (ssStatus === 'live') {
+      sessMs = ssEndUtc(ss) - now;
+      sessLabel = '🔴 ' + ss.id + ' – ' + ss.name + ' (fin dans)';
+      sessDateLine = 'Fin estimée : ' + utcToLocalDisplay(ssEndUtc(ss)).split('—')[1]?.trim();
+      sessCard.className = 'countdown-card wrc-live';
+    } else {
+      sessMs = ss.utc - now;
+      sessLabel = ss.id + ' – ' + ss.name;
+      sessDateLine = utcToLocalDisplay(ss.utc);
+      sessCard.className = 'countdown-card wrc-session';
+    }
+    document.getElementById('wrc-sess-title').textContent = sessLabel;
+    document.getElementById('wrc-sess-dateline').textContent = sessDateLine || '';
+    const sc = diffToComponents(sessMs);
+    document.getElementById('wrc-sd-days').textContent  = pad(sc.days);
+    document.getElementById('wrc-sd-hours').textContent = pad(sc.hours);
+    document.getElementById('wrc-sd-mins').textContent  = pad(sc.mins);
+    document.getElementById('wrc-sd-secs').textContent  = pad(sc.secs);
+  }
+
+  // Live info box (SS en cours + suivante)
+  const liveBox = document.getElementById('wrc-live-box');
+  if (liveSsObj) {
+    liveBox.style.display = 'block';
+    document.getElementById('wrc-live-ss-name').textContent = liveSsObj.ss.id + ' – ' + liveSsObj.ss.name;
+    document.getElementById('wrc-live-ss-dist').textContent = liveSsObj.ss.dist;
+    // Find next after live
+    const liveIdx = liveSsObj.rally.stages.indexOf(liveSsObj.ss);
+    const nextAfterLive = liveSsObj.rally.stages[liveIdx + 1];
+    if (nextAfterLive) {
+      document.getElementById('wrc-next-ss-name').textContent = nextAfterLive.id + ' – ' + nextAfterLive.name;
+      document.getElementById('wrc-next-ss-time').textContent = utcToLocalDisplay(nextAfterLive.utc);
+    } else {
+      document.getElementById('wrc-next-ss-name').textContent = 'Fin du rallye';
+      document.getElementById('wrc-next-ss-time').textContent = '';
+    }
+  } else {
+    liveBox.style.display = 'none';
+  }
+}
+
+// ── WRC race list ─────────────────────────────────────────────────────────────
+let wrcCurrentFilter = 'upcoming';
+let wrcOpenRallies = new Set();
+
+function wrcFilter(f, btn) {
+  wrcCurrentFilter = f;
+  document.querySelectorAll('.wrc-filter-bar .tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderWrcRallies();
+}
+
+function toggleWrcCard(key) {
+  if (wrcOpenRallies.has(key)) wrcOpenRallies.delete(key);
+  else wrcOpenRallies.add(key);
+  renderWrcRallies();
+}
+
+document.getElementById('wrc-races-container').addEventListener('click', e => {
+  const card = e.target.closest('[data-wrc-key]');
+  if (card) toggleWrcCard(card.dataset.wrcKey);
+});
+
+function renderWrcRallies() {
+  const now = Date.now();
+  const nextRally = findNextWrcRally(now);
+  const container = document.getElementById('wrc-races-container');
+
+  const filtered = WRC_RALLIES.filter(r => {
+    const st = wrcRallyStatus(r, now);
+    if (wrcCurrentFilter === 'upcoming') return st === 'upcoming' || st === 'live';
+    if (wrcCurrentFilter === 'past') return st === 'past';
+    return true;
+  });
+
+  let html = '';
+  let prevStatus = null;
+
+  filtered.forEach(r => {
+    const st = wrcRallyStatus(r, now);
+    const isNext = nextRally && r.round === nextRally.round && st !== 'live';
+    const isLive = st === 'live';
+    const key = 'wrc-' + r.round;
+    const isOpen = wrcOpenRallies.has(key);
+
+    if (wrcCurrentFilter === 'all') {
+      if (prevStatus !== 'past' && st === 'past') html += `<div class="wrc-section-sep">Terminés</div>`;
+      if (prevStatus === 'past' && st !== 'past') html += `<div class="wrc-section-sep">À venir</div>`;
+    }
+    prevStatus = st;
+
+    const cardCls = ['wrc-card',
+      st === 'past' ? 'past' : '',
+      isNext ? 'is-next' : '',
+      isLive ? 'live-rally' : ''
+    ].filter(Boolean).join(' ');
+
+    // Badges
+    let badges = '';
+    if (isLive) badges += `<span class="badge" style="background:rgba(255,40,40,0.15);color:#ff4444">🔴 En cours</span>`;
+    else if (isNext) badges += `<span class="badge badge-next">Prochain</span>`;
+    else if (st === 'past') badges += `<span class="badge badge-done">Terminé</span>`;
+
+    const surfCls = SURFACE_CLASS[r.surface] || 'surface-gravel';
+    const surfLabel = SURFACE_LABELS[r.surface] || r.surface;
+
+    // Stages panel
+    let stagesHtml = '';
+    if (isOpen && r.stages.length) {
+      // Group by day
+      let currentDay = '';
+      stagesHtml = r.stages.map(ss => {
+        const ssStatus = getSsStatus(ss, now);
+        const isNextSs = findNextWrcSs(now)?.ss.utc === ss.utc;
+        const rowCls = ['ss-item',
+          ssStatus === 'past' ? 'past-ss' : '',
+          ssStatus === 'live' ? 'live-ss' : '',
+          (ssStatus === 'upcoming' && isNextSs) ? 'next-ss' : ''
+        ].filter(Boolean).join(' ');
+
+        // Day header
+        const d = new Date(ss.utc);
+        const dayKey = d.toUTCString().slice(0,16);
+        let dayHdr = '';
+        if (dayKey !== currentDay) {
+          currentDay = dayKey;
+          const days = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
+          const months=['jan.','fév.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
+          const ld = new Date(ss.utc);
+          dayHdr = `<div class="day-header">${days[ld.getDay()]} ${ld.getDate()} ${months[ld.getMonth()]}</div>`;
+        }
+
+        let statusHtml = '';
+        if (ssStatus === 'live') statusHtml = `<span class="ss-status live">🔴 Live</span>`;
+        else if (ssStatus === 'past') statusHtml = `<span class="ss-status done">Terminé</span>`;
+        else if (isNextSs) statusHtml = `<span class="ss-status next">▶ Prochain</span>`;
+        else statusHtml = `<span class="ss-status soon">À venir</span>`;
+
+        return dayHdr + `<div class="${rowCls}">
+          <span class="ss-num">${ss.id}</span>
+          <span class="ss-name">${ss.name}<small>${ss.dist}</small></span>
+          <span class="ss-time">${utcToLocalDisplay(ss.utc).split('—')[1]?.trim() || ''}</span>
+          ${statusHtml}
+        </div>`;
+      }).join('');
+    }
+
+    html += `<div class="${cardCls}" data-wrc-key="${key}">
+      <div class="wrc-header">
+        <div class="round-num">R<span>${r.round}</span></div>
+        <div class="race-main">
+          <div class="race-name-row">
+            <span style="font-size:18px">${r.flag}</span>
+            <span class="race-name">${r.name}</span>
+            ${badges}
+            <span class="surface-badge ${surfCls}">${surfLabel}</span>
+          </div>
+          <div class="race-circuit">${r.hq}</div>
+        </div>
+        <div class="race-dates-col">
+          <div class="race-dates-main">${r.dates}</div>
+          <div class="race-dates-year">2026</div>
+          <div class="toggle-hint">${r.stages.length ? (isOpen ? '▲ Fermer' : '▼ Spéciales') : ''}</div>
+        </div>
+      </div>
+      ${r.stages.length ? `<div class="sessions-panel ${isOpen ? 'open' : ''}">${stagesHtml}</div>` : ''}
+    </div>`;
+  });
+
+  container.innerHTML = html || '<div style="padding:40px;text-align:center;color:var(--text-dim)">Aucun rallye dans cette catégorie.</div>';
+}
+
+// WRC init handled by appInit()
+// ─── Init ─────────────────────────────────────────────────────────────────────
+async function appInit() {
+  await loadData();
+  renderRaces(); updateHero();
+  renderWrcRallies(); updateWrcHero();
+  const nf1 = findNextRace();
+  if (nf1) { openRounds.add(String(nf1.round)+'|||'+nf1.name); renderRaces(); }
+  const nwrc = findNextWrcRally(Date.now());
+  if (nwrc) { wrcOpenRallies.add('wrc-'+nwrc.round); renderWrcRallies(); }
+  setInterval(() => { updateHero(); updateWrcHero(); }, 1000);
+  setInterval(() => { renderRaces(); renderWrcRallies(); }, 30000);
+}
+appInit();
+
+
+
+// ── Manual Update via GitHub Actions API ─────────────────────────────────────
+function resetGhConfig() {
+  localStorage.removeItem('gh_token');
+  localStorage.removeItem('gh_owner');
+  localStorage.removeItem('gh_repo');
+  document.getElementById('gh-owner').value = '';
+  document.getElementById('gh-repo').value  = '';
+  document.getElementById('gh-token').value  = '';
+  document.getElementById('gh-modal').classList.add('show');
+}
+
+function handleUpdate() {
+  const owner = localStorage.getItem('gh_owner');
+  const repo  = localStorage.getItem('gh_repo');
+  const token = localStorage.getItem('gh_token');
+
+  if (!owner || !repo || !token) {
+    // Pre-fill if saved
+    document.getElementById('gh-owner').value = owner || '';
+    document.getElementById('gh-repo').value  = repo  || '';
+    document.getElementById('gh-token').value  = token || '';
+    document.getElementById('gh-modal').classList.add('show');
+    return;
+  }
+  triggerWorkflow(owner, repo, token);
+}
+
+function closeModal() {
+  document.getElementById('gh-modal').classList.remove('show');
+}
+
+function saveAndTrigger() {
+  const owner = document.getElementById('gh-owner').value.trim();
+  const repo  = document.getElementById('gh-repo').value.trim();
+  const token = document.getElementById('gh-token').value.trim();
+  if (!owner || !repo || !token) { alert('Veuillez remplir tous les champs.'); return; }
+  localStorage.setItem('gh_owner', owner);
+  localStorage.setItem('gh_repo',  repo);
+  localStorage.setItem('gh_token', token);
+  closeModal();
+  triggerWorkflow(owner, repo, token);
+}
+
+async function triggerWorkflow(owner, repo, token) {
+  const btn = document.getElementById('update-btn');
+  btn.disabled = true;
+  btn.className = 'loading';
+  btn.textContent = '⟳ En cours...';
+
+  try {
+    // Step 1: list workflows to find the right filename
+    const listRes = await fetch(
+      `https://api.github.com/repos/${owner}/${repo}/actions/workflows`,
+      { headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json' } }
+    );
+    if (listRes.status === 401) throw new Error('Token invalide ou expiré');
+    if (listRes.status === 404) throw new Error(`Repo "${owner}/${repo}" introuvable`);
+    if (!listRes.ok) throw new Error('Erreur API GitHub: ' + listRes.status);
+
+    const listData = await listRes.json();
+    const workflows = listData.workflows || [];
+    if (workflows.length === 0) throw new Error('Aucun workflow trouvé dans ce repo');
+
+    // Pick first workflow (or find update.yml)
+    const wf = workflows.find(w => w.path.includes('update')) || workflows[0];
+    const wfId = wf.id;
+    console.log('Workflow trouvé:', wf.name, wf.path, 'id:', wfId);
+
+    // Step 2: trigger it
+    const res = await fetch(
+      `https://api.github.com/repos/${owner}/${repo}/actions/workflows/${wfId}/dispatches`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Accept': 'application/vnd.github+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ ref: 'main' })
+      }
+    );
+
+    if (res.status === 204) {
+      btn.className = 'success';
+      btn.textContent = '✓ Lancé !';
+      // After ~30s reload data.json (workflow takes ~20-30s)
+      setTimeout(async () => {
+        btn.textContent = '⟳ Chargement...';
+        await loadData(true);
+        renderRaces(); renderWrcRallies();
+        btn.disabled = false;
+        btn.className = '';
+        btn.textContent = '↻ Update';
+      }, 30000);
+    } else if (res.status === 401) {
+      throw new Error('Token invalide ou expiré');
+    } else if (res.status === 404) {
+      throw new Error('Repo ou workflow introuvable');
+    } else {
+      throw new Error('Erreur ' + res.status);
+    }
+  } catch(e) {
+    btn.className = 'error';
+    btn.textContent = '✗ ' + e.message;
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.className = '';
+      btn.textContent = '↻ Update';
+    }, 4000);
+    // Clear bad token so modal reopens next time
+    if (e.message.includes('Token') || e.message.includes('introuvable')) {
+      localStorage.removeItem('gh_token');
+    }
+  }
+}
+
+// Close modal on backdrop click
+document.getElementById('gh-modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('gh-modal')) closeModal();
+});
+
+</script>
+</body>
+</html>
