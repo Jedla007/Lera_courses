@@ -54,6 +54,17 @@ def save_data(data):
 
 
 # ── F1: Jolpica/Ergast API ────────────────────────────────────────────────────
+#
+# CORRECTIONS MANUELLES : ces valeurs UTC sont connues correctes et protégées.
+# Jolpica retourne des données erronées pour ces sessions spécifiques.
+# Format : (round, session_label) → "UTC correct"
+MANUAL_CORRECTIONS = {
+    # Azerbaijan (format spécial : qualifs vendredi, course samedi)
+    (15, "Essais Libres 2"): "2026-09-25T11:00:00Z",
+    (15, "Qualifications"):  "2026-09-25T13:00:00Z",
+    (15, "Course"):          "2026-09-26T12:00:00Z",
+}
+
 def update_f1(data):
     print("\n── F1: Jolpica API...")
     changes = 0
@@ -69,23 +80,46 @@ def update_f1(data):
             if not match:
                 continue
 
-            def update_session(stype, date, time, label=""):
+            is_sprint = match.get("sprint", False)
+
+            def update_session(stype, date, time, label="", prefer_last=False):
                 nonlocal changes
                 if not date or not time:
                     return
                 utc_new = f"{date}T{time}" if time.endswith("Z") else f"{date}T{time}Z"
-                for s in match["sessions"]:
-                    if s["type"] == stype and s["utc"] != utc_new:
-                        print(f"   R{rnd} {match['short'][:15]} {label}: {s['utc']} → {utc_new}")
-                        s["utc"] = utc_new
-                        changes += 1
-                        break
+                sessions_of_type = [s for s in match["sessions"] if s["type"] == stype]
+                if not sessions_of_type:
+                    return
+                # Sur les week-ends sprint, Jolpica's "Qualifying" correspond aux
+                # Qualifications régulières (2e session "q"), pas aux Qualifs Sprint (1re).
+                target = sessions_of_type[-1] if prefer_last else sessions_of_type[0]
+                if target["utc"] != utc_new:
+                    print(f"   R{rnd} {match['short'][:15]} {label}: {target['utc']} → {utc_new}")
+                    target["utc"] = utc_new
+                    changes += 1
 
             update_session("race",   race_api.get("date"), race_api.get("time",""), "Course")
-            update_session("sprint", race_api.get("Sprint",{}).get("date"), race_api.get("Sprint",{}).get("time",""), "Sprint")
-            update_session("q",      race_api.get("Qualifying",{}).get("date"), race_api.get("Qualifying",{}).get("time",""), "Qualifs")
+            update_session("sprint", race_api.get("Sprint",{}).get("date"),      race_api.get("Sprint",{}).get("time",""),      "Sprint")
+            # prefer_last=is_sprint : cible "Qualifications" (pas "Qualifs Sprint") sur les sprints
+            update_session("q",      race_api.get("Qualifying",{}).get("date"),  race_api.get("Qualifying",{}).get("time",""),  "Qualifs", prefer_last=is_sprint)
 
-        print(f"   → {changes} changement(s) F1")
+        # Applique les corrections manuelles (protège les sessions que Jolpica se trompe)
+        corrections_applied = 0
+        for gp in data["f1"]:
+            rnd = gp.get("round")
+            for s in gp.get("sessions", []):
+                key = (rnd, s["label"])
+                if key in MANUAL_CORRECTIONS:
+                    correct_utc = MANUAL_CORRECTIONS[key]
+                    if s["utc"] != correct_utc:
+                        print(f"   R{rnd} correction manuelle {s['label']}: {s['utc']} → {correct_utc}")
+                        s["utc"] = correct_utc
+                        corrections_applied += 1
+                        changes += 1
+        if corrections_applied:
+            print(f"   → {corrections_applied} correction(s) manuelle(s) appliquée(s)")
+
+        print(f"   → {changes} changement(s) F1 total")
     except Exception as e:
         print(f"   ⚠ F1 non critique: {e}")
     return changes
