@@ -95,6 +95,22 @@ def main():
     total += update_f1(data)
     # WRC: pas d'API publique fiable, les données sont maintenues manuellement
 
+
+# ── WRC: correct official names from wrc.com ──────────────────────────────────
+WRC_NAMES = {
+    7:  ('WRC FORUM8 Rally Japan',        '29–31 mai'),
+    8:  ('WRC EKO Acropolis Rally Greece', '25–28 juin'),
+    9:  ('WRC Delfi Rally Estonia',        '16–19 juil.'),
+    10: ('WRC Secto Rally Finland',        '30 juil.–2 août'),
+    11: ('WRC ueno Rally del Paraguay',    '27–30 août'),
+    12: ('WRC Rally Chile Bio Bío',        '10–13 sept.'),
+    13: ('WRC Rally Italia Sardegna',      '1–4 oct.'),
+    14: ('WRC Rally Saudi Arabia',         '11–14 nov.'),
+}
+for rally in data.get('wrc', []):
+    rnd = rally.get('round')
+    if rnd in WRC_NAMES:
+        rally['name'], rally['dates'] = WRC_NAMES[rnd]
     save_data(data)
     print(f"\n✅ Terminé — {total} changement(s) au total")
     return 0
