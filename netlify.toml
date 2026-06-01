@@ -1,8 +1,22 @@
 [build]
   publish = "."
 
+# data.json : cache 1h (mis à jour daily par GitHub Actions)
 [[headers]]
   for = "/data.json"
   [headers.values]
     Cache-Control = "public, max-age=3600"
     Access-Control-Allow-Origin = "*"
+
+# Service Worker : jamais mis en cache par le CDN
+# (le navigateur doit toujours vérifier la version à chaque visite)
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+# App shell : pas de cache CDN non plus (single-file app)
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "no-cache"

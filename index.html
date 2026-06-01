@@ -711,6 +711,11 @@ window.addEventListener('online', updateOnline); window.addEventListener('offlin
   document.head.appendChild(l);
 })();
 
+// ─── Service Worker ───────────────────────────────────────────────────────────
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(e => console.warn('SW:', e));
+}
+
 // ─── Init & loops ─────────────────────────────────────────────────────────────
 function renderAll() { renderF1(); renderWRC(); }
 
