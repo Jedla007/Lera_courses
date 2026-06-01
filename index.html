@@ -326,22 +326,40 @@ function toMs(iso) { return new Date(iso).getTime(); }
 function adaptF1(arr) { return (arr||[]).map(r => ({...r, sessions:(r.sessions||[]).map(s => ({...s, utc:toMs(s.utc)}))})); }
 function adaptWRC(arr) { return (arr||[]).map(r => ({...r, stages:(r.stages||[]).map(s => ({...s, utc:toMs(s.utc)}))})); }
 
+const DATA_CACHE_KEY = 'f1wrc_data_cache';
+
+function applyData(d, source) {
+  RACES   = adaptF1(d.f1);
+  RALLIES = adaptWRC(d.wrc);
+  const date = d.version ? new Date(d.version).toLocaleDateString('fr-FR') : '—';
+  el('data-version').textContent = source === 'online'  ? 'Données du ' + date
+                                 : source === 'cache'   ? 'Données du ' + date + ' 💾'
+                                 :                        'Données embarquées';
+}
+
 async function loadData(bust=false) {
-  RACES   = adaptF1(FALLBACK.f1);
-  RALLIES = adaptWRC(FALLBACK.wrc);
-  el('data-version').textContent = 'Données embarquées';
+  // 1. Affichage immédiat avec le FALLBACK embarqué
+  applyData(FALLBACK, 'fallback');
+
   try {
+    // 2. Tentative réseau
     const ctrl = new AbortController();
     const t = setTimeout(()=>ctrl.abort(), 8000);
     const r = await fetch('data.json', {cache: bust?'no-cache':'default', signal:ctrl.signal});
     clearTimeout(t);
     if (!r.ok) throw new Error('HTTP '+r.status);
     const d = await r.json();
-    RACES   = adaptF1(d.f1);
-    RALLIES = adaptWRC(d.wrc);
-    el('data-version').textContent = 'Données du '+(d.version ? new Date(d.version).toLocaleDateString('fr-FR') : '—');
+    try { localStorage.setItem(DATA_CACHE_KEY, JSON.stringify(d)); } catch(_) {}
+    applyData(d, 'online');
     renderAll();
-  } catch(e) { console.info('data.json non dispo:', e.message); }
+  } catch(e) {
+    // 3. Hors ligne / erreur réseau → dernières données cachées
+    console.info('data.json non dispo:', e.message);
+    try {
+      const raw = localStorage.getItem(DATA_CACHE_KEY);
+      if (raw) { applyData(JSON.parse(raw), 'cache'); renderAll(); }
+    } catch(_) {}
+  }
 }
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
